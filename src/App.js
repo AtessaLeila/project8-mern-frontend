@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Catalog from './components/Catalogue/Catalogue'
+import Order from './components/Order/Order'
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
 
       </header>
       <body>
-        <Catalog />
+        <Order />
       </body>
     </div>
   );
