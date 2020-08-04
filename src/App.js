@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import Catalog from './components/Catalogue/Catalogue'
+import Order from './components/Order/Order'
 
 
 class App extends Component {
@@ -17,7 +19,6 @@ class App extends Component {
       </div>
     )
   }
-
 }
 
 export default App;
