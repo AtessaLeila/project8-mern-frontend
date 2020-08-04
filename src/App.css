@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  width: 100vw;
 }
 
 .App-logo {
@@ -14,8 +15,8 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #F1FAFD;
+  min-height: 15vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,4 +36,22 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* MAIN CATALOGUE PAGE*/
+
+.catalogue-main{
+  width: 100%;
+}
+
+
+/* CATALOGUE HEADER*/
+
+.catalogue-header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+
+
+  background-color: #9FC3CC;
 }
