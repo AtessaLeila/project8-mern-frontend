@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router'
 import './App.css';
 import Catalogue from './components/Catalogue/Catalogue'
 import Order from './components/Order/Order'
 import CatalogueSidebar from './components/Catalogue/CatalogueSidebar'
-import './components/Catalogue/CatalogueSidebar.css'
 
+
+let url = "https://group-project-mern-backend.herokuapp.com"
 
 
 class App extends Component {
@@ -18,12 +20,22 @@ class App extends Component {
         </header>
         <body>
           <div className="container">
+
             {/* <div>
               <Order />
             </div> */}
 
-            <Catalogue />
-            <CatalogueSidebar />
+            {/* <Catalogue />
+            <CatalogueSidebar /> */}
+
+
+
+
+            <Route path="/orders" component={Order} />
+
+            <Route path="/catalog"
+              render={() => { return <Catalogue url={url} /> }} />
+
 
           </div>
         </body>

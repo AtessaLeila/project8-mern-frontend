@@ -95,6 +95,17 @@ button {
     background-color: #8fafb8;
 }
 
+.button-detail {
+    background-color: #9fbbcc;
+    color: #3C3C3C;
+    border: none;
+    border-radius: 2px;
+}
+
+.button-detail:hover {
+    background-color: #95aebd;
+}
+
 
 
 

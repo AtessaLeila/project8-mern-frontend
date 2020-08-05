@@ -1,10 +1,24 @@
 .sidebar {
-    width: 30%;
-    box-shadow: 0px 0px 5px 1px #9FC3CC;
+    width: 100%;
     display: inline-block;
-    height: 100vh;
+    height: 80vh;
 }
 
-.boxitem {
+ div.scroll { 
+    margin:4px, 4px; 
+    padding:4px; 
     overflow: scroll;
-}
+    text-align:justify; 
+} 
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 10px;
+    border-right: 3px solid #D1E5EB;
+
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+  }
