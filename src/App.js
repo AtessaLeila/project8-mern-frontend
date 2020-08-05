@@ -1,18 +1,25 @@
 import React, { Component } from 'react';
 import './App.css';
-import Catalog from './components/Catalogue/Catalogue'
+import Catalogue from './components/Catalogue/Catalogue'
 import Order from './components/Order/Order'
+
 
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <body>
-          <div className="container">
-            <div className="nav">
+      <div className="App">
+        <header>
+        <div className="nav">
               <h1>Welcome to Narwhal Bakery</h1>
             </div>
+        </header>
+        <body>
+          <div className="container">
+            {/* <div>
+              <Order />
+            </div> */}
+              <Catalogue />
 
           </div>
         </body>
