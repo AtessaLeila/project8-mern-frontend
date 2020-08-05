@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import { Route } from 'react-router'
 import './App.css';
@@ -7,7 +8,6 @@ import CatalogueSidebar from './components/Catalogue/CatalogueSidebar'
 
 
 let url = "https://group-project-mern-backend.herokuapp.com"
-
 
 class App extends Component {
   render() {
@@ -36,11 +36,16 @@ class App extends Component {
             <Route path="/catalog"
               render={() => { return <Catalogue url={url} /> }} />
 
-
+            <Route
+              path="/catalog"
+              render={() => {
+                return <Catalogue url={url} />;
+              }}
+            />
           </div>
         </body>
       </div>
-    )
+    );
   }
 }
 
