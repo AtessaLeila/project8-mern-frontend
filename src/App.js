@@ -6,12 +6,12 @@ import Order from './components/Order/Order'
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+     {/*  <header className="App-header">
 
       </header>
       <body>
         <Order />
-      </body>
+      </body> */}
     </div>
   );
 }
