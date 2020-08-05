@@ -7,3 +7,37 @@ body {
   background-color: #F1FAFD;
   height: 200px;
 }
+
+/* MAIN CATALOGUE PAGE*/
+
+.catalogue-main{
+  width: 100%;
+}
+
+/* CATALOGUE HEADER*/
+
+.catalogue-header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+
+
+  background-color: #9FC3CC;
+}
+
+/* MAIN ORDER PAGE*/
+
+.order-main{
+  width: 100%;
+}
+
+/* ORDER HEADER*/
+
+.order-header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+
+
+  background-color: #9FC3CC;
+}
