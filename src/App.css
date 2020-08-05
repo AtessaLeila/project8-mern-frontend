@@ -113,7 +113,7 @@ body {
 .item-detail-buttons {
   grid-row: 2;
   grid-column: 3;
-  height: 90%;
+  height: 85%;
   
   display: flex;
   justify-content: space-evenly;
