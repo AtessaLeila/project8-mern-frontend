@@ -1,7 +1,7 @@
 button {
     border-radius: 1px;
     /* padding: 10px 20px; */
-    width: 90px;
+    /* width: 90px; */
     height: 40px;
     font-size: 15px;
 }
@@ -94,7 +94,6 @@ button {
 .button-submitbtn:hover {
     background-color: #8fafb8;
 }
-
 
 
 

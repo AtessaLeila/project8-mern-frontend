@@ -12,6 +12,7 @@ const Button = (props) => {
     }
 
     return <button className={classList.join(" ")}>{props.label}</button>
+    
 }
 
 export default Button; 
