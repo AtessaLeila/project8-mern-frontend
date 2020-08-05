@@ -124,6 +124,67 @@ body {
   justify-content: space-evenly;
   align-items: flex-end;
 }
+
+/* NEW/EDIT ITEM FORM */
+
+.item-form {
+  background-color: #ffffff;
+  width: 76%;
+  height: 95%;
+  /* border: 4px outset #9FC3CC; */
+  box-shadow: 0px 0px 5px 1px #9FC3CC;
+  overflow: scroll;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1.5fr 1.5fr;
+}
+
+.item-form-image {
+  grid-row: 1;
+  grid-column: 3;
+  background-image: linear-gradient(to right, #000000, #333333);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-form-row-one {
+  grid-row: 1;
+  grid-column: 1 / span 2;
+  width: 93%;
+  justify-self: center;
+}
+
+.item-form-row-two {
+  grid-row: 2;
+  grid-column: 1 / span 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.item-form-row-two-unit-price {
+  display: flex;
+  justify-content: space-evenly;
+  width: 85%;
+}
+
+.item-form-row-two-inventory {
+  width: 90%;
+}
+
+.item-form-buttons {
+  grid-row: 2;
+  grid-column: 3;
+  height: 85%;
+  
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+
 /* MAIN ORDER PAGE*/
 
 .order-main{
