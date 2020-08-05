@@ -4,6 +4,7 @@ import './App.css';
 import Catalogue from './components/Catalogue/Catalogue'
 import Order from './components/Order/Order'
 
+let url = "https://dashboard.heroku.com/apps/group-project-mern-backend/"
 
 
 class App extends Component {
@@ -20,7 +21,8 @@ class App extends Component {
             
               <Route path="/orders" component={Order} />
             
-              <Route path="/catalog" component={Catalogue} />
+              <Route path="/catalog" 
+              render={()=>{return<Catalogue url={url} />}} />
 
           </div>
         </body>
