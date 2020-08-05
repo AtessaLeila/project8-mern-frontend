@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Button from "../Button/Button"
+import Counter from '../Counter/Counter'
 
 
 export class ItemForm extends Component {
@@ -15,15 +16,15 @@ export class ItemForm extends Component {
                 <div className="item-form-row-one">
                     <h2>Enter the details for the new item.</h2>
                     <input className="item-form-name item-form-input" type="text" placeholder="Item Name" />
-                    <input className="item-form-detail item-form-input" type="text" placeholder="Item Description" />
+                    <textarea className="item-form-detail item-form-input" placeholder="Item Description" />
                 </div>
                 <div className="item-form-row-two">
                     <div className="item-form-row-two-unit-price">
-                        <h2>Unit: XXX</h2>
-                        <h2>Price: XXX</h2>
+                        <input className="item-form-unit" type="text" placeholder="Unit Size" />
+                        <input className="item-form-unit" type="text" placeholder="Unit Price" />
                     </div>
                     <div className="item-form-row-two-inventory">
-                        <h2>In Stock: XXXX</h2>
+                    <input className="item-form-inventory" type="text" placeholder="Inventory Count" />
                     </div>
                 </div>
                 <div className="item-form-buttons">

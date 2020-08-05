@@ -139,7 +139,7 @@ body {
 
 .item-form {
   background-color: #ffffff;
-  width: 85%;
+  width: 80%;
   height: 95%;
   /* border: 4px outset #9FC3CC; */
   box-shadow: 0px 0px 5px 1px #9FC3CC;
@@ -180,6 +180,7 @@ body {
 }
 
 .item-form-detail {
+  font-family: inherit;
   margin-top: 2%;
   height: 40%; 
 }
@@ -187,20 +188,35 @@ body {
 .item-form-row-two {
   grid-row: 2;
   grid-column: 1 / span 2;
+  margin-left: 3.5%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .item-form-row-two-unit-price {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   width: 85%;
+  height: 10%
+}
+
+.item-form-unit {
+  width: 15%;
+  margin: 0 12% 0 0;
 }
 
 .item-form-row-two-inventory {
   width: 90%;
+  height: 8%;
+  margin-top: 5%;
+}
+
+.item-form-inventory {
+  width: 14.5%;
+  height: 100%;
+  margin: 0 12% 0 0;
 }
 
 .item-form-buttons {
