@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
 import Button from "../Button/Button"
 
 
@@ -34,7 +35,7 @@ export class ItemForm extends Component {
     }
 
     cancelForm = () =>{
-        
+
     }
 
     render() {
@@ -59,7 +60,7 @@ export class ItemForm extends Component {
                     </div>
                 </div>
                 <div className="item-form-buttons">
-                    <Button type="delete" label="Cancel" />
+                    <Link to="/catalog"><Button type="delete" label="Cancel" /></Link>
                     <Button type="edit" label="Create" />
                 </div>
             </form>

@@ -17,9 +17,9 @@ class App extends Component {
         </header>
         <body>
           <div className="container">
-            {/* <div>
-              <Order />
-            </div> */}
+            
+              <Route path="/orders" component={Order} />
+            
               <Route path="/catalog" component={Catalogue} />
 
           </div>
