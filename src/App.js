@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router'
 import './App.css';
 import Catalogue from './components/Catalogue/Catalogue'
 import Order from './components/Order/Order'
@@ -19,7 +20,7 @@ class App extends Component {
             {/* <div>
               <Order />
             </div> */}
-              <Catalogue />
+              <Route path="/catalog" component={Catalogue} />
 
           </div>
         </body>
