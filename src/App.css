@@ -166,8 +166,22 @@ body {
 .item-form-row-one {
   grid-row: 1;
   grid-column: 1 / span 2;
+  margin-top: 2%;
   width: 93%;
   justify-self: center;
+}
+
+.item-form-input {
+  width: 80%;
+}
+
+.item-form-name {
+  height: 10%; 
+}
+
+.item-form-detail {
+  margin-top: 2%;
+  height: 40%; 
 }
 
 .item-form-row-two {
