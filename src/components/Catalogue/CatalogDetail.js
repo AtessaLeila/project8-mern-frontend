@@ -11,6 +11,7 @@ export class CatalogDetail extends Component {
             ,price: 0
             ,inventory: 0
             ,image: ""
+            ,ready:false
         }
         this.id = "5f2af0f77854d527596e3cad"
     }
@@ -26,6 +27,7 @@ export class CatalogDetail extends Component {
                     ,price: res.unitPrice
                     ,inventory: res.inventoryCount
                     ,image: res.image
+                    ,ready:true
                 })
             })
     }

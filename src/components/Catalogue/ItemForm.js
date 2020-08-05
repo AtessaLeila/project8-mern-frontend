@@ -16,6 +16,7 @@ export class ItemForm extends Component {
             ,price: 0
             ,inventory: 0
             ,image: ""
+            ,success: false
         }
     }
 
@@ -39,7 +40,9 @@ export class ItemForm extends Component {
         fetch(`${this.props.url}/item`, options)
         .then(res => res.json())
         .then(res =>{
-            console.log(res)
+            this.setState({
+                success: true
+            })
         })
 
 
@@ -50,6 +53,12 @@ export class ItemForm extends Component {
     }
 
     render() {
+        if (this.state.success){
+         return (
+             <div><h2>Success!</h2></div>
+         )       
+        }
+        else{
         return (
             <form className="item-form" onSubmit={this.onSubmit}>
                 <div className="item-form-image">
@@ -77,6 +86,7 @@ export class ItemForm extends Component {
                 </div>
             </form>
         )
+        }
     }
 }
 
