@@ -15,8 +15,4 @@ const select = {
 
 
 storiesOf('Dropdown', module)
-    .add('Primary', () => <Dropdown
-        label="Primary"
-        style={select}
-        options={["One", "Two", "Three"]}
-    />)
+    .add('Primary', () => <Dropdown style={select} />)

@@ -8,9 +8,9 @@ function Dropdown(props) {
             label: "Select",
             value: "Select"
         },
-        { label: "One", value: "One" },
-        { label: "Two", value: "Two" },
-        { label: "Three", value: "Three" }
+        { label: "", value: "" },
+        { label: "", value: "" },
+        { label: "", value: "" }
     ]);
     return (
         <select style={props.style}>
