@@ -8,7 +8,8 @@ const ButtonStyle = {
     border: "none",
     fontSize: "20px",
     width: "30px",
-    height: "30px"
+    height: "30px",
+    padding: "1px 1px"
 };
 const CounterStyle = {
     display: "inline-block",
