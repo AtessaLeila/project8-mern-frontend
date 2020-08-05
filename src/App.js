@@ -9,17 +9,17 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <body>
-          <div className="container">
-            <div className="nav">
+        <header>
+        <div className="nav">
               <h1>Welcome to Narwhal Bakery</h1>
             </div>
+        </header>
+        <body>
+          <div className="container">
             {/* <div>
               <Order />
             </div> */}
-            <div>
               <Catalogue />
-            </div>
 
           </div>
         </body>
