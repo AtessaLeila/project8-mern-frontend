@@ -4,7 +4,7 @@ import CatalogueDetail from './CatalogDetail'
 import ItemForm from './ItemForm'
 import {Route } from 'react-router-dom'
  
-function Catalogue() {
+function Catalogue(props) {
 
 
     return (
@@ -19,7 +19,7 @@ function Catalogue() {
            exact />
            <Route path="/catalog/item/new" 
            render={()=>{return(<div className="item-form-body">
-            <ItemForm />
+            <ItemForm url={props.url} />
            </div>)}}
            exact />
         </div>

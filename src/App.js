@@ -4,7 +4,7 @@ import './App.css';
 import Catalogue from './components/Catalogue/Catalogue'
 import Order from './components/Order/Order'
 
-let url = "https://dashboard.heroku.com/apps/group-project-mern-backend/"
+let url = "https://group-project-mern-backend.herokuapp.com"
 
 
 class App extends Component {

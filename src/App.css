@@ -183,11 +183,15 @@ body {
 .item-form-name {
   height: 10%; 
 }
+.item-form-category {
+  height: 10%;
+  margin-top: 2%; 
+}
 
 .item-form-detail {
   font-family: inherit;
   margin-top: 2%;
-  height: 40%; 
+  height: 30%; 
 }
 
 .item-form-row-two {
