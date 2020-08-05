@@ -12,4 +12,6 @@ storiesOf('Button', module)
     .add('Delete', () => <Button type="delete" label="Delete" />)
     .add('New', () => <Button type="new" label="New Item" />)
     .add('Submitbtn', () => <Button type="submitbtn" label="Submit" />)
+    .add('Detail', () => <Button type="detail" label="Detail" />)
+
 

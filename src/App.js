@@ -1,12 +1,13 @@
+
 import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom'
 import './App.css';
 import Catalogue from './components/Catalogue/Catalogue'
 import Order from './components/Order/Order'
 import Button from './components/Button/Button'
+import CatalogueSidebar from './components/Catalogue/CatalogueSidebar'
 
 let url = "https://group-project-mern-backend.herokuapp.com"
-
 
 class App extends Component {
   render() {
@@ -21,16 +22,32 @@ class App extends Component {
         </header>
         <body>
           <div className="container">
-            
-              <Route path="/orders" component={Order} />
-            
-              <Route path="/catalog" 
-              render={()=>{return<Catalogue url={url} />}} />
 
+            {/* <div>
+              <Order />
+            </div> */}
+
+            {/* <Catalogue />
+            <CatalogueSidebar /> */}
+
+
+
+
+            <Route path="/orders" component={Order} />
+
+            <Route path="/catalog"
+              render={() => { return <Catalogue url={url} /> }} />
+
+            <Route
+              path="/catalog"
+              render={() => {
+                return <Catalogue url={url} />;
+              }}
+            />
           </div>
         </body>
       </div>
-    )
+    );
   }
 }
 

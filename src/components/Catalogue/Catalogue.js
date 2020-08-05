@@ -2,18 +2,20 @@ import React from 'react'
 import CatalogueHeader from './CatalogueHeader'
 import CatalogueDetail from './CatalogDetail'
 import ItemForm from './ItemForm'
-import {Route } from 'react-router-dom'
- 
-function Catalogue(props) {
+import { Route } from 'react-router-dom'
+import CatalogueSidebar from './CatalogueSidebar'
+import './CatalogueSidebar.css'
 
+function Catalogue(props) {
 
     return (
         <div className="catalogue-main">
            <CatalogueHeader url={props.url}/> 
            <Route path="/catalog"
            render={()=>{return(<div className="catalogue-body">
-            <div className="catalogue-sidebar">
-            </div>
+            <div className="catalogue-sidebar" style={{ marginLeft: "10px", marginRight: "20px" }}>
+                 <CatalogueSidebar />
+             </div>
             <CatalogueDetail url={props.url} />
            </div>)}}
            exact />
