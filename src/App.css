@@ -12,6 +12,12 @@
   align-items: center;
 }
 
+.header-buttons {
+  width: 40%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
 body {
   height: 90vh;
   margin: 0 auto;

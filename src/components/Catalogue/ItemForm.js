@@ -41,8 +41,16 @@ export class ItemForm extends Component {
         .then(res => res.json())
         .then(res =>{
             this.setState({
-                success: true
+                name: ""
+                ,description: ""
+                ,category: ""
+                ,unit: 0
+                ,price: 0
+                ,inventory: 0
+                ,image: ""
+                ,success: true
             })
+            //this.props.history.push("/catalog")
         })
 
 

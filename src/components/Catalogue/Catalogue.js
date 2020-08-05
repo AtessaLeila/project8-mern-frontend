@@ -9,7 +9,7 @@ function Catalogue(props) {
 
     return (
         <div className="catalogue-main">
-           <CatalogueHeader /> 
+           <CatalogueHeader url={props.url}/> 
            <Route path="/catalog"
            render={()=>{return(<div className="catalogue-body">
             <div className="catalogue-sidebar">
