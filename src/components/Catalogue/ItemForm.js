@@ -1,17 +1,39 @@
 import React, { Component } from 'react'
 import Button from "../Button/Button"
-import Counter from '../Counter/Counter'
+
+
 
 
 export class ItemForm extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            name: ""
+            ,description: ""
+            ,unit: 0
+            ,price: 0
+            ,inventory: 0
+            ,image: ""
+        }
+    }
+
+
+    onChange = () =>{
+
+
+    }
+
+    onSubmit = () =>{
+
+
+    }
+
     render() {
         return (
             <form className="item-form">
                 <div className="item-form-image">
                     <h3 style={{color: "white"}}>Placeholder</h3>
-                    <div className="item-form-add-image-button">
-                        <Button type="create" label="Add an image" />
-                    </div>
+                    <input className="item-form-add-image" type="text" placeholder="Image Url" />
                 </div>
                 <div className="item-form-row-one">
                     <h2>Enter the details for the new item.</h2>
