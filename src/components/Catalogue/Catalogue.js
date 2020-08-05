@@ -13,7 +13,9 @@ function Catalogue() {
             </div>
             <CatalogueDetail />
            </div> */}
-           <ItemForm />
+           <div className="item-form-body">
+            <ItemForm />
+           </div>
         </div>
     )
 }
