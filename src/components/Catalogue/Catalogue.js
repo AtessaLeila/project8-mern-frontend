@@ -14,7 +14,7 @@ function Catalogue(props) {
            render={()=>{return(<div className="catalogue-body">
             <div className="catalogue-sidebar">
             </div>
-            <CatalogueDetail />
+            <CatalogueDetail url={props.url} />
            </div>)}}
            exact />
            <Route path="/catalog/item/new" 

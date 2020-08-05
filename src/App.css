@@ -90,6 +90,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .item-detail-row-one {

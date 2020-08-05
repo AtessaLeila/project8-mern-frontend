@@ -11,9 +11,8 @@ export class CatalogDetail extends Component {
             ,price: 0
             ,inventory: 0
             ,image: ""
-            ,ready:false
         }
-        this.id = "5f2af0f77854d527596e3cad"
+        this.id = "5f2af0f77854d527596e3cb2"
     }
 
     componentDidMount= () =>{
@@ -27,14 +26,13 @@ export class CatalogDetail extends Component {
                     ,price: res.unitPrice
                     ,inventory: res.inventoryCount
                     ,image: res.image
-                    ,ready:true
                 })
             })
     }
     render() {
         return (
             <div className="item-detail">
-            <div className="item-detail-image" /* style={{backgroundImage: `url(${this.state.image}`}} */><h3 style={{color: "white"}}>Placeholder</h3></div>
+            <div className="item-detail-image" style={{backgroundImage: `url(${this.state.image}`}}></div>
             <div className="item-detail-row-one">
                 <h1>{this.state.name}</h1>
                 <h3>{this.state.description}</h3>
