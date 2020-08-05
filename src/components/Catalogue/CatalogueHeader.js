@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router'
+import { Link } from 'react-router-dom'
 import Button from '../Button/Button'
 import Searchfield from '../Searchfield/Searchfield'
 
@@ -24,7 +24,9 @@ function CatalogueHeader() {
                 <Searchfield style={searchFieldStyle} className="catalogue-header-search" name="Submitbtn" type="submit" placeholder="Search your catalogue..." small />
             </div>
             <div className="new-item-button">
+                <Link  to="/catalog/item/new">
                 <Button style={buttonStyle}  type="create" label="+ New Item" />
+                </Link>
             </div>
         
         </div>
