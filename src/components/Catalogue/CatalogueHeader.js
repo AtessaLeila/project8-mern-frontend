@@ -16,7 +16,7 @@ function CatalogueHeader() {
     const buttonStyle = {
         marginRight: "20px",
     }
-   
+
 
     return (
         <div className="catalogue-header">
@@ -24,11 +24,11 @@ function CatalogueHeader() {
                 <Searchfield style={searchFieldStyle} className="catalogue-header-search" name="Submitbtn" type="submit" placeholder="Search your catalogue..." small />
             </div>
             <div className="new-item-button">
-                <Link  to="/catalog/item/new">
-                <Button style={buttonStyle}  type="create" label="+ New Item" />
+                <Link to="/catalog/item/new">
+                    <Button style={buttonStyle} type="create" label="+ New Item" />
                 </Link>
             </div>
-        
+
         </div>
     )
 }
