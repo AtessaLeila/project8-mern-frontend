@@ -11,10 +11,12 @@ export class ItemForm extends Component {
         this.state = {
             name: ""
             ,description: ""
+            ,category: ""
             ,unit: 0
             ,price: 0
             ,inventory: 0
             ,image: ""
+            ,success: false
         }
     }
 
@@ -24,12 +26,32 @@ export class ItemForm extends Component {
 
         this.setState({
             [e.target.name]: e.target.value
-
         })
 
     }
 
-    onSubmit = () =>{
+    onSubmit = (e) =>{
+        e.preventDefault()
+        const options = {
+            "method": "POST"
+            ,"headers" : { "Content-Type" : "application/json"}
+            ,body: JSON.stringify(this.state)
+        } 
+        fetch(`${this.props.url}/item`, options)
+        .then(res => res.json())
+        .then(res =>{
+            this.setState({
+                name: ""
+                ,description: ""
+                ,category: ""
+                ,unit: 0
+                ,price: 0
+                ,inventory: 0
+                ,image: ""
+                ,success: true
+            })
+            //this.props.history.push("/catalog")
+        })
 
 
     }
@@ -39,8 +61,14 @@ export class ItemForm extends Component {
     }
 
     render() {
+        if (this.state.success){
+         return (
+             <div><h2>Success!</h2></div>
+         )       
+        }
+        else{
         return (
-            <form className="item-form">
+            <form className="item-form" onSubmit={this.onSubmit}>
                 <div className="item-form-image">
                     <h3 style={{color: "white"}}>Placeholder</h3>
                     <input className="item-form-add-image" type="text" name="image" placeholder="Image Url" onChange={this.onChange} />
@@ -48,6 +76,7 @@ export class ItemForm extends Component {
                 <div className="item-form-row-one">
                     <h2>Enter the details for the new item.</h2>
                     <input className="item-form-name item-form-input" type="text" name="name" placeholder="Item Name" onChange={this.onChange} />
+                    <input className="item-form-category item-form-input" type="text" name="name" placeholder="Item Category" onChange={this.onChange} />
                     <textarea className="item-form-detail item-form-input" name="description" placeholder="Item Description" onChange={this.onChange} />
                 </div>
                 <div className="item-form-row-two">
@@ -61,10 +90,11 @@ export class ItemForm extends Component {
                 </div>
                 <div className="item-form-buttons">
                     <Link to="/catalog"><Button type="delete" label="Cancel" /></Link>
-                    <Button type="edit" label="Create" />
+                    <Button as="submit" type="edit" label="Create" />
                 </div>
             </form>
         )
+        }
     }
 }
 

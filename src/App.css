@@ -12,6 +12,12 @@
   align-items: center;
 }
 
+.header-buttons {
+  width: 40%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
 body {
   height: 90vh;
   margin: 0 auto;
@@ -90,6 +96,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .item-detail-row-one {
@@ -183,11 +192,15 @@ body {
 .item-form-name {
   height: 10%; 
 }
+.item-form-category {
+  height: 10%;
+  margin-top: 2%; 
+}
 
 .item-form-detail {
   font-family: inherit;
   margin-top: 2%;
-  height: 40%; 
+  height: 30%; 
 }
 
 .item-form-row-two {
