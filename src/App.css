@@ -163,6 +163,11 @@ body {
   align-items: center;
 }
 
+.item-form-add-image {
+  width: 95%;
+  height: 10%;
+}
+
 .item-form-row-one {
   grid-row: 1;
   grid-column: 1 / span 2;
