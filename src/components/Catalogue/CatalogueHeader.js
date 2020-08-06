@@ -20,7 +20,7 @@ function CatalogueHeader(props) {
     let searchSubmit = (value) => {
         fetch(`${props.url}/item/name/${value}`)
             .then(res => res.json())
-            .then(res =>{
+            .then(res => {
                 <Redirect to={`/catalog/item/${}`} />
             })
     }
@@ -30,7 +30,7 @@ function CatalogueHeader(props) {
         <div className="catalogue-header">
             <div className="catalogue-searchfield">
             </div>
-                <Searchfield style={searchFieldStyle} className="catalogue-header-search" name="Submitbtn" type="submit" placeholder="Search your catalogue..." small searchSubmit={searchSubmit} />
+            <Searchfield style={searchFieldStyle} className="catalogue-header-search" name="Submitbtn" type="submit" placeholder="Search your catalogue..." small searchSubmit={searchSubmit} />
             <div className="new-item-button">
                 <Link to="/catalog/item/new">
                     <Button style={buttonStyle} type="create" label="+ New Item" />
