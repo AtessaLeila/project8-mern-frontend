@@ -3,7 +3,7 @@ import Button from '../Button/Button'
 import { Redirect, Link } from 'react-router-dom'
 
 export class CatalogDetail extends Component {
-    constructor(props){
+    constructor(props) {
         super(props)
         this.state = {
             id: ""
@@ -17,10 +17,10 @@ export class CatalogDetail extends Component {
         this.id = this.props.id
     }
 
-    componentDidMount= () =>{
+    componentDidMount = () => {
         fetch(`${this.props.url}/item/id/${this.props.id}`)
             .then(res => res.json())
-            .then(res =>{
+            .then(res => {
                 this.setState({
                     id: res._id
                     ,name: res.name
@@ -33,7 +33,25 @@ export class CatalogDetail extends Component {
                     ,deleted: false
                 })
             })
-            
+
+    }
+
+    componentDidUpdate(props) {
+        if (props.id != this.props.id) {
+            fetch(`${this.props.url}/item/id/${this.props.id}`)
+                .then(res => res.json())
+                .then(res => {
+                    this.setState({
+                        name: res.name
+                        , description: res.description
+                        , unit: res.unit
+                        , price: res.unitPrice
+                        , inventory: res.inventoryCount
+                        , image: res.image
+                        , ready: true
+                    })
+                })
+        }
     }
 
     editItem = () => {
@@ -93,6 +111,7 @@ export class CatalogDetail extends Component {
             </div>)
         } else {return null}
     }
-}
+  }
 
-export default CatalogDetail
+
+export default CatalogDetail;
