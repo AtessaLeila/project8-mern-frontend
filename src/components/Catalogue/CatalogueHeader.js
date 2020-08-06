@@ -1,9 +1,7 @@
-import React from 'react'
-import { Link, Redirect } from 'react-router-dom'
-import Button from '../Button/Button'
-import Searchfield from '../Searchfield/Searchfield'
-
-
+import React from "react";
+import { Link, Redirect } from "react-router-dom";
+import Button from "../Button/Button";
+import Searchfield from "../Searchfield/Searchfield";
 
 function CatalogueHeader(props) {
     const searchFieldStyle = {
@@ -35,6 +33,7 @@ function CatalogueHeader(props) {
 
         </div>
     )
+
 }
 
-export default CatalogueHeader
+export default CatalogueHeader;
