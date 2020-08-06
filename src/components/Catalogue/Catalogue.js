@@ -10,7 +10,7 @@ class Catalogue extends Component {
     constructor(props){
         super(props)
         this.state = {
-            currentId: "5f2b2c159f5fa00004aba0ee"
+            currentId: ""
             ,ready: false
         }
     }
@@ -48,7 +48,7 @@ class Catalogue extends Component {
            exact />
            <Route path="/catalog/item/edit" 
            render={()=>{return(<div className="item-form-body">
-            <ItemForm url={this.props.url} id={this.state.currentId} method={"PUT"}/>
+            <ItemForm url={this.props.url} id={this.state.currentId} method={"PUT"} setId={this.searchSubmit} />
            </div>)}}
            exact />
              <Route path={`/catalog/item/id/${this.state.currentId}`}

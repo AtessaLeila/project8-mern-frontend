@@ -6,7 +6,8 @@ export class CatalogDetail extends Component {
     constructor(props){
         super(props)
         this.state = {
-            name: ""
+            id: ""
+            ,name: ""
             ,description: ""
             ,unit: 0
             ,price: 0
@@ -21,7 +22,8 @@ export class CatalogDetail extends Component {
             .then(res => res.json())
             .then(res =>{
                 this.setState({
-                    name: res.name
+                    id: res._id
+                    ,name: res.name
                     ,description: res.description
                     ,unit: res.unit
                     ,price: res.unitPrice
@@ -35,7 +37,7 @@ export class CatalogDetail extends Component {
     }
 
     editItem = () => {
-      
+      this.props.setId(this.state.id)
     }
 
     deleteItem = () =>{
@@ -77,9 +79,9 @@ export class CatalogDetail extends Component {
                 <div onClick={this.deleteItem} >
                     <Button type="delete" label="Delete" />
                 </div>
-                <div onClick={this.editItem}>
+                <Link to="/catalog/item/edit" onClick={this.editItem}>
                     <Button type="edit" label="Edit"  />
-                </div>
+                </Link>
             </div>
         </div>
         )
