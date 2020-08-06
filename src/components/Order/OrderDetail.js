@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class OrderDetail extends Component {
+/* class OrderDetail extends Component {
   render() {
     return (
       <div className="order-detail">
@@ -24,3 +24,4 @@ class OrderDetail extends Component {
 }
 
 export default OrderDetail;
+ */
