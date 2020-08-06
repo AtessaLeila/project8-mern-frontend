@@ -26,6 +26,10 @@ function CatalogueHeader(props) {
             <div className="catalogue-searchfield">
                 <Searchfield style={searchFieldStyle} className="catalogue-header-search" name="Submitbtn" type="submit" placeholder="Search your catalogue..." small url={props.url} searchSubmit={searchSubmit} />
             </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> ab2064b2b45eb5619b7ebc2e4a34e7022420fe8a
             <div className="new-item-button">
                 <Link to="/catalog/item/new">
                     <Button style={buttonStyle} type="create" label="+ New Item" />
