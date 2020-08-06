@@ -81,7 +81,7 @@ export class ItemForm extends Component {
              <div><h2>Success!</h2></div>
          )       
         }
-        else if (this.state.ready === true && this.props.id === true){
+        else if (this.state.ready === true && this.props.id == true){
         return (
             <form className="item-form" onSubmit={this.onSubmit}>
                 <div className="item-form-image">
@@ -97,10 +97,10 @@ export class ItemForm extends Component {
                 <div className="item-form-row-two">
                     <div className="item-form-row-two-unit-price">
                         <input className="item-form-unit" type="number" name="unit" value={this.state.placeholder.unit} onChange={this.onChange} />
-                        <input className="item-form-unit" type="number" name="price" value={this.state.placeholder.price} onChange={this.onChange} />
+                        <input className="item-form-unit" type="number" name="price" value={this.state.placeholder.unitPrice} onChange={this.onChange} />
                     </div>
                     <div className="item-form-row-two-inventory">
-                    <input className="item-form-inventory" type="number" name="inventory" placeholder="Inventory Ct." onChange={this.onChange} />
+                    <input className="item-form-inventory" type="number" name="inventory" value={this.state.placeholder.inventoryCount} onChange={this.onChange} />
                     </div>
                 </div>
                 <div className="item-form-buttons">
