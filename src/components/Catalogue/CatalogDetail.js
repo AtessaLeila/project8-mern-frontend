@@ -79,7 +79,7 @@ export class CatalogDetail extends Component {
                 <div onClick={this.deleteItem} >
                     <Button type="delete" label="Delete" />
                 </div>
-                <Link to="/catalog/item/edit" onClick={this.editItem}>
+                <Link to={`/catalog/item/edit/${this.state.id}`} onClick={this.editItem}>
                     <Button type="edit" label="Edit"  />
                 </Link>
             </div>

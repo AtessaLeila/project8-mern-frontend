@@ -46,15 +46,15 @@ class Catalogue extends Component {
             <ItemForm url={this.props.url} method={"POST"}/>
            </div>)}}
            exact />
-           <Route path="/catalog/item/edit" 
+           <Route path={`/catalog/item/edit/${this.state.currentId}`} 
            render={()=>{return(<div className="item-form-body">
-            <ItemForm url={this.props.url} id={this.state.currentId} method={"PUT"} setId={this.searchSubmit} />
+            <ItemForm url={this.props.url} id={this.state.currentId} method={"PUT"}  />
            </div>)}}
            exact />
              <Route path={`/catalog/item/id/${this.state.currentId}`}
            render={()=>{ if(this.state.ready === true){
                return(
-                    <CatalogueDetail url={this.props.url} id={this.state.currentId} />
+                    <CatalogueDetail url={this.props.url} id={this.state.currentId} setId={this.searchSubmit} />
                )}
                 else {return null}
             }}

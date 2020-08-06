@@ -163,6 +163,9 @@ body {
   grid-row: 1;
   grid-column: 3;
   background-image: linear-gradient(to right, #000000, #333333);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   width: 98%;
   height: 98%;
   margin: 1%;

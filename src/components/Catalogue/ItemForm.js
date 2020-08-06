@@ -21,12 +21,19 @@ export class ItemForm extends Component {
 
     componentDidMount(){
         if (this.props.id){
-            fetch(`${this.props.url}/item/${this.props.id}`)
+            console.log("running")
+            fetch(`${this.props.url}/item/id/${this.props.id}`)
             .then(res => res.json())
             .then(res =>{
                 this.setState({
-                   placeholder: res
-                   ,ready: true
+                    name: res.name
+                    ,description: res.description
+                    ,category: res.category
+                    ,unit: res.unit
+                    ,price: res.unitPrice
+                    ,inventory: res.inventoryCount
+                    ,image: res.image
+                    ,ready: true
                 })
             })
         }
@@ -84,9 +91,9 @@ export class ItemForm extends Component {
         else if (this.state.ready && this.props.id){
         return (
             <form className="item-form" onSubmit={this.onSubmit}>
-                <div className="item-form-image">
-                    <h3 style={{color: "white"}}>Placeholder</h3>
-                    <input className="item-form-add-image" type="text" name="image" value={this.state.placeholder.image} onChange={this.onChange} />
+                <div className="item-form-image" style={{backgroundImage: `url(${this.state.image})`}}>
+    
+                    <input className="item-form-add-image" type="text" name="image" value={this.state.image} onChange={this.onChange} />
                 </div>
                 <div className="item-form-row-one">
                     <h2>Enter the details for the new item.</h2>
