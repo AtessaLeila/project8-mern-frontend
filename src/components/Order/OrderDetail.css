@@ -1,0 +1,31 @@
+.order-detail {
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+}
+
+.order-detail-status {
+  text-align: center;
+}
+
+.order-detail-info {
+  display: inline-block;
+}
+
+.items-ordered-box {
+  border-style: outset;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0px 0px 5px 1px #9fc3cc;
+  /* border-bottom: 4px solid #000; */
+}
+
+.order-detail-cost {
+  text-align: right;
+  margin-right: 100px;
+}
+
+.order-item-cost-ul {
+  float: left;
+}
