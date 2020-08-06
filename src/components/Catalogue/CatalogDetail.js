@@ -12,11 +12,11 @@ export class CatalogDetail extends Component {
             ,inventory: 0
             ,image: ""
         }
-        this.id = "5f2af0f77854d527596e3cb2"
+        this.id = this.props.id
     }
 
     componentDidMount= () =>{
-        fetch(`${this.props.url}/item/id/${this.id}`)
+        fetch(`${this.props.url}/item/id/${this.props.id}`)
             .then(res => res.json())
             .then(res =>{
                 this.setState({
@@ -26,10 +26,13 @@ export class CatalogDetail extends Component {
                     ,price: res.unitPrice
                     ,inventory: res.inventoryCount
                     ,image: res.image
+                    ,ready: true
                 })
             })
+            
     }
     render() {
+        if (this.state.ready === true){
         return (
             <div className="item-detail">
             <div className="item-detail-image" style={{backgroundImage: `url(${this.state.image}`}}></div>
@@ -52,6 +55,7 @@ export class CatalogDetail extends Component {
             </div>
         </div>
         )
+        } else {return <h3>What?</h3>}
     }
 }
 
