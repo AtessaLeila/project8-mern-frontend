@@ -13,10 +13,6 @@ class Catalogue extends Component {
         this.state = {
             currentId: ""
             ,ready: false
-<<<<<<< HEAD
-=======
-
->>>>>>> ab2064b2b45eb5619b7ebc2e4a34e7022420fe8a
         }
     }
 
@@ -69,10 +65,6 @@ class Catalogue extends Component {
                     }}
                 /> */
 
-<<<<<<< HEAD
-=======
-
->>>>>>> ab2064b2b45eb5619b7ebc2e4a34e7022420fe8a
        
     return (
         <div className="catalogue-main">

@@ -1,19 +1,11 @@
 import React, { Component } from 'react'
 import Button from '../Button/Button'
 import { Redirect, Link } from 'react-router-dom'
-<<<<<<< HEAD
-=======
-
->>>>>>> ab2064b2b45eb5619b7ebc2e4a34e7022420fe8a
 
 export class CatalogDetail extends Component {
     constructor(props) {
         super(props)
         this.state = {
-<<<<<<< HEAD
-=======
-
->>>>>>> ab2064b2b45eb5619b7ebc2e4a34e7022420fe8a
             id: ""
             ,name: ""
             ,description: ""

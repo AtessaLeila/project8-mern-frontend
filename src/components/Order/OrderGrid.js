@@ -4,7 +4,7 @@ import React from "react";
 function OrderGrid() {
   return (
     <div>
-     {/*  <div className="order-grid">
+       {/* <div className="order-grid">
         <h2>Items Ordered</h2>
         <div className="order-grid-item">
           <h3>Item</h3>
@@ -37,7 +37,7 @@ function OrderGrid() {
               <li>text</li>
             </ol>
           </div>
-        </div>
+        </div>  */}
       </div>
   );
 }
