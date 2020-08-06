@@ -31,6 +31,22 @@ export class CatalogDetail extends Component {
             })
             
     }
+
+    deleteItem = () =>{
+        console.log("trying")
+        const options = {
+            "method": "DELETE"
+            ,"headers" : { "Content-Type" : "application/json"}
+            ,body: JSON.stringify(this.state)
+        } 
+        fetch(`${this.props.url}/item/name/${this.state.name}`, options)
+        .then(res => res.json())
+        .then(res =>{
+            console.log(res)
+            return alert("The item has been deleted")
+        })
+    }
+
     render() {
         if (this.state.ready === true){
         return (
@@ -50,8 +66,10 @@ export class CatalogDetail extends Component {
                 </div>
             </div>
             <div className="item-detail-buttons">
-                <Button type="delete" label="Delete" />
-                <Button type="edit" label="Edit" />
+                <div onClick={this.deleteItem} >
+                    <Button type="delete" label="Delete" />
+                </div>
+                <Button type="edit" label="Edit"  />
             </div>
         </div>
         )
