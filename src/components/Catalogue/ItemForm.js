@@ -76,7 +76,7 @@ export class ItemForm extends Component {
                 <div className="item-form-row-one">
                     <h2>Enter the details for the new item.</h2>
                     <input className="item-form-name item-form-input" type="text" name="name" placeholder="Item Name" onChange={this.onChange} />
-                    <input className="item-form-category item-form-input" type="text" name="name" placeholder="Item Category" onChange={this.onChange} />
+                    <input className="item-form-category item-form-input" type="text" name="category" placeholder="Item Category" onChange={this.onChange} />
                     <textarea className="item-form-detail item-form-input" name="description" placeholder="Item Description" onChange={this.onChange} />
                 </div>
                 <div className="item-form-row-two">

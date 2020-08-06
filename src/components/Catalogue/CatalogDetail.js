@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Button from '../Button/Button'
+import { Redirect, Link } from 'react-router-dom'
 
 export class CatalogDetail extends Component {
     constructor(props){
@@ -27,13 +28,17 @@ export class CatalogDetail extends Component {
                     ,inventory: res.inventoryCount
                     ,image: res.image
                     ,ready: true
+                    ,deleted: false
                 })
             })
             
     }
 
+    editItem = () => {
+
+    }
+
     deleteItem = () =>{
-        console.log("trying")
         const options = {
             "method": "DELETE"
             ,"headers" : { "Content-Type" : "application/json"}
@@ -42,7 +47,10 @@ export class CatalogDetail extends Component {
         fetch(`${this.props.url}/item/name/${this.state.name}`, options)
         .then(res => res.json())
         .then(res =>{
-            console.log(res)
+            this.setState({
+                ready: false
+                ,deleted: true
+            })
             return alert("The item has been deleted")
         })
     }
@@ -69,11 +77,19 @@ export class CatalogDetail extends Component {
                 <div onClick={this.deleteItem} >
                     <Button type="delete" label="Delete" />
                 </div>
-                <Button type="edit" label="Edit"  />
+                <div>
+                    <Button type="edit" label="Edit"  />
+                </div>
             </div>
         </div>
         )
-        } else {return <h3>What?</h3>}
+        } else if (this.state.deleted === true){
+            return (<div>
+                <Link to="/catalog">
+                    <Button type="edit" label="Back to Catalog"  />
+                </Link>
+            </div>)
+        } else {return null}
     }
 }
 
