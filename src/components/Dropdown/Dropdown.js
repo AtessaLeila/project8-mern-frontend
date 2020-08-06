@@ -3,23 +3,17 @@ import React from 'react';
 
 
 function Dropdown(props) {
-    const [items] = React.useState([
-        {
-            label: "Select",
-            value: "Select"
-        },
-        { label: "", value: "" },
-        { label: "", value: "" },
-        { label: "", value: "" }
-    ]);
+    const items = props.options
+      
     return (
-        <select style={props.style}>
-            {items.map(item => (
+        <select style={props.style} onChange={e => {props.onChange(e.target.value)}}>
+            <option value="null" >Select...</option>
+            {items.map((item, idx) => (
                 <option
-                    key={item.value}
-                    value={item.value}
+                    key={idx}
+                    value={item}
                 >
-                    {item.label}
+                    {item}
                 </option>
             ))}
         </select>
