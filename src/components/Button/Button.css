@@ -95,14 +95,16 @@ button {
     background-color: #8fafb8;
 }
 
-.button-detail {
+.button-detail-detail {
     background-color: #9fbbcc;
     color: #3C3C3C;
     border: none;
     border-radius: 2px;
+    height: 10px;
+    width: 10px;
 }
 
-.button-detail:hover {
+.button-detail-detail:hover {
     background-color: #95aebd;
 }
 
