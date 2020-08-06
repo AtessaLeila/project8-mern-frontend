@@ -10,18 +10,16 @@ export class ItemForm extends Component {
             ,description: ""
             ,category: ""
             ,unit: 0
-            ,price: 0
-            ,inventory: 0
+            ,unitPrice: 0
+            ,inventoryCount: 0
             ,image: ""
             ,success: false
             ,ready: false
-            ,placeholder: {}
         }
     }
 
     componentDidMount(){
         if (this.props.id){
-            console.log("running")
             fetch(`${this.props.url}/item/id/${this.props.id}`)
             .then(res => res.json())
             .then(res =>{
@@ -30,8 +28,8 @@ export class ItemForm extends Component {
                     ,description: res.description
                     ,category: res.category
                     ,unit: res.unit
-                    ,price: res.unitPrice
-                    ,inventory: res.inventoryCount
+                    ,unitPrice: res.unitPrice
+                    ,inventoryCount: res.inventoryCount
                     ,image: res.image
                     ,ready: true
                 })
@@ -55,12 +53,20 @@ export class ItemForm extends Component {
 
     onSubmit = (e) =>{
         e.preventDefault()
+        let submitUrl = ""
+        
+        if (this.props.method === "POST"){
+            submitUrl = `${this.props.url}/item`
+        }
+        else {
+            submitUrl = `${this.props.url}/item/name/${this.state.name}`
+        }
         const options = {
             "method": this.props.method
             ,"headers" : { "Content-Type" : "application/json"}
             ,body: JSON.stringify(this.state)
         } 
-        fetch(`${this.props.url}/item`, options)
+        fetch(submitUrl, options)
         .then(res => res.json())
         .then(res =>{
             this.setState({
@@ -68,8 +74,8 @@ export class ItemForm extends Component {
                 ,description: ""
                 ,category: ""
                 ,unit: 0
-                ,price: 0
-                ,inventory: 0
+                ,unitPrice: 0
+                ,inventoryCount: 0
                 ,image: ""
                 ,success: true
             })
@@ -104,10 +110,10 @@ export class ItemForm extends Component {
                 <div className="item-form-row-two">
                     <div className="item-form-row-two-unit-price">
                         <input className="item-form-unit" type="number" name="unit" value={this.state.unit} onChange={this.onChange} />
-                        <input className="item-form-unit" type="number" name="price" value={this.state.unitPrice} onChange={this.onChange} />
+                        <input className="item-form-unit" type="number" name="unitPrice" value={this.state.unitPrice} onChange={this.onChange} />
                     </div>
                     <div className="item-form-row-two-inventory">
-                    <input className="item-form-inventory" type="number" name="inventory" value={this.state.inventoryCount} onChange={this.onChange} />
+                    <input className="item-form-inventory" type="number" name="inventoryCount" value={this.state.inventoryCount} onChange={this.onChange} />
                     </div>
                 </div>
                 <div className="item-form-buttons">
@@ -131,10 +137,10 @@ export class ItemForm extends Component {
                 <div className="item-form-row-two">
                     <div className="item-form-row-two-unit-price">
                         <input className="item-form-unit" type="number" name="unit" placeholder="Unit Size" onChange={this.onChange} />
-                        <input className="item-form-unit" type="number" name="price" placeholder="Unit Price" onChange={this.onChange} />
+                        <input className="item-form-unit" type="number" name="unitPrice" placeholder="Unit Price" onChange={this.onChange} />
                     </div>
                     <div className="item-form-row-two-inventory">
-                    <input className="item-form-inventory" type="number" name="inventory" placeholder="Inventory Ct." onChange={this.onChange} />
+                    <input className="item-form-inventory" type="number" name="inventoryCount" placeholder="Inventory Ct." onChange={this.onChange} />
                     </div>
                 </div>
                 <div className="item-form-buttons">
