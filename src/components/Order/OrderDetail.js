@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Button from "../Button/Button.stories";
+import Button from "../Button/Button";
 import "./OrderDetail.css";
 
 class OrderDetail extends Component {
@@ -18,8 +18,9 @@ class OrderDetail extends Component {
       items: [],
       statusColor: "",
     };
-    this.id = "5f2b2c159f5fa00004aba113";
+    this.id = "5f2c4dc6dd12ce0004e869b4";
   }
+
   componentDidMount() {
     fetch(`${this.props.url}/order/id/${this.id}`)
       .then(res => res.json())
@@ -39,6 +40,13 @@ class OrderDetail extends Component {
         });
         if (this.state.status === "Ready") {
           this.setState({ statusColor: "#ECE2BE" });
+        } else if (this.state.status === "Delivered") {
+          this.setState({ statusColor: "#bdd49a" });
+        } else if (this.state.status === "Confirmed") {
+          this.setState({ statusColor: "#91bfb6" });
+        } else if (this.state.status === "Unconfirmed") {
+          this.setState({ statusColor: "#ba6d6b" });
+        } else {
         }
       });
   }
@@ -63,7 +71,70 @@ class OrderDetail extends Component {
     return orderItems;
   }
 
-  setStatusButton() {}
+  updateStatus = () => {
+    console.log(this.state.status);
+    let newStatus = "";
+    if (this.state.status === "Unconfirmed") {
+      newStatus = "Confirmed";
+    } else if (this.state.status === "Confirmed") {
+      newStatus = "Ready";
+    } else if (this.state.status === "Ready") {
+      newStatus = "Delivered";
+    }
+    this.setState(
+      {
+        status: newStatus,
+      },
+      () => {
+        this.sendNewStatus();
+      }
+    );
+  };
+
+  sendNewStatus = () => {
+    console.log(this.state);
+
+    const options = {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(this.state),
+    };
+    fetch(`${this.props.url}/order/id/${this.id}`, options)
+      .then(res => res.json())
+      .then(res => {
+        console.log(res);
+        console.log("Status Changed!");
+      });
+  };
+
+  setStatusButton = () => {
+    if (this.state.status === "Ready") {
+      return (
+        <div onClick={this.updateStatus}>
+          <Button type="delivered" label="Mark as Delivered" />
+        </div>
+      );
+    } else if (this.state.status === "Unconfirmed") {
+      return (
+        <div onClick={this.updateStatus}>
+          <Button type="confirm" label="Mark as Confirmed" />
+        </div>
+      );
+    } else if (this.state.status === "Confirmed") {
+      return (
+        <div onClick={this.updateStatus}>
+          <Button type="ready" label="Mark as Ready" />
+        </div>
+      );
+    } else if (this.state.status === "Delivered") {
+      return (
+        <div>
+          <Button type="delivered" label="Delivery Complete" />
+        </div>
+      );
+    } else {
+    }
+  };
 
   render() {
     return (
@@ -104,11 +175,17 @@ class OrderDetail extends Component {
           </div>
           <div className="displayed-items">{this.displayItems()}</div>
         </div>
-        <div></div>
+        <div className="status-button">{this.setStatusButton()}</div>
         <div className="order-detail-cost">
-          <h3>Sub-Total: {this.state.subTotal}</h3>
-          <h3>Tax: {this.state.tax}</h3>
-          <h3>Total: {this.state.total}</h3>
+          <p>
+            <strong>Sub-Total:</strong> ${this.state.subTotal}
+          </p>
+          <p>
+            <strong>Tax:</strong> ${this.state.tax}
+          </p>
+          <p>
+            <strong>Total:</strong> ${this.state.total}
+          </p>
         </div>
       </div>
     );
