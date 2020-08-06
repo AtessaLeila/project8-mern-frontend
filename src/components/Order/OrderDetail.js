@@ -83,4 +83,3 @@ class OrderDetail extends Component {
 }
 
 export default OrderDetail;
- */
