@@ -68,8 +68,8 @@ export class CatalogDetail extends Component {
             </div>
             <div className="item-detail-row-two">
                 <div className="row-two-unit-price">
-                    <h2>Unit: {this.state.unit}</h2>
-                    <h2>Price: {this.state.price}</h2>
+                    <h2>Unit Size: {this.state.unit}</h2>
+                    <h2>Price: ${this.state.price}</h2>
                 </div>
                 <div className="row-two-inventory">
                     <h2>In Stock: {this.state.inventory}</h2>

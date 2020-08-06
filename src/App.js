@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Link } from "react-router-dom";
+import { Route, Link, Redirect } from "react-router-dom";
 import "./App.css";
 import Catalogue from "./components/Catalogue/Catalogue";
 import Order from "./components/Order/Order";
@@ -22,7 +22,8 @@ class App extends Component {
         </header>
         <body>
           <div className="container">
-
+            <Route path="/" 
+              render={() =>{return <Redirect to="/catalog"/>}} />
             <Route
               path="/orders"
               render={() => {
