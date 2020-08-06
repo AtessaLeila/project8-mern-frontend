@@ -1,6 +1,5 @@
 import React from "react";
 import OrderHeader from "./OrderHeader";
-import OrderDetail from "./OrderDetail";
 // import ItemForm from '../Catalogue/ItemForm'
 import OrderGrid from "./OrderGrid";
 import OrderSidebar from './OrderSidebar'

@@ -32,7 +32,7 @@ class App extends Component {
             />
 
             <Route
-              path="/catalog"
+              path="/catalog/"
               render={() => {
                 return <Catalogue url={url} />;
               }}

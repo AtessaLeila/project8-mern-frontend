@@ -7,6 +7,7 @@
 
 .order-detail-status {
   text-align: center;
+  margin: 25px;
 }
 
 .order-detail-info {
@@ -18,14 +19,78 @@
   width: 100%;
   background: #fff;
   box-shadow: 0px 0px 5px 1px #9fc3cc;
+  /* text-align: center; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
   /* border-bottom: 4px solid #000; */
 }
 
-.order-detail-cost {
-  text-align: right;
-  margin-right: 100px;
+.items-ordered-box h4 {
+  font-style: italic;
+}
+.displayed-items {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.order-item-cost-ul {
+.order-box {
+  display: flex;
+  justify-content: space-evenly;
+  line-height: 1px;
+  width: 100%;
+}
+
+.order-box-header {
+  display: flex;
+  justify-content: flex-start;
+  justify-self: center;
+  width: 100%;
+  margin-left: 4%;
+  text-decoration: underline;
+}
+
+.order-box-header h4 {
+  width: 33%;
+}
+
+.order-box-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: inherit;
+}
+
+p {
   float: left;
+  margin-left: 25px;
+  margin-right: 25px;
+  /* font-family: Georgia, "Times New Roman", Times, serif; */
+}
+
+span {
+  border-radius: 2px;
+  margin: 5px;
+  /* border-style: solid #ece2be; */
+}
+
+.order-val {
+  text-align: left;
+}
+
+.status-button {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.order-detail-cost {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-right: 50px;
 }
