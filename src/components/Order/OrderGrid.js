@@ -3,6 +3,7 @@ import React from "react";
 
 function OrderGrid() {
   return (
+
     <div>
       <div className="order-grid">
         <h2>Items Ordered</h2>
@@ -39,7 +40,6 @@ function OrderGrid() {
           </div>
         </div>
       </div>
-    </div>
   );
 }
 

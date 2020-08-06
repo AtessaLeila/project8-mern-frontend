@@ -1,9 +1,9 @@
-.order-detail {
+/* .order-detail {
   box-sizing: border-box;
   height: 100vh;
   width: 100vw;
   display: grid;
-}
+} */
 
 .order-detail-status {
   text-align: center;
