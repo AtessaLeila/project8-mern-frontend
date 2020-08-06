@@ -86,18 +86,18 @@ export class ItemForm extends Component {
             <form className="item-form" onSubmit={this.onSubmit}>
                 <div className="item-form-image">
                     <h3 style={{color: "white"}}>Placeholder</h3>
-                    <input className="item-form-add-image" type="text" name="image" placeholder={this.state.placeholder.image} onChange={this.onChange} />
+                    <input className="item-form-add-image" type="text" name="image" value={this.state.placeholder.image} onChange={this.onChange} />
                 </div>
                 <div className="item-form-row-one">
                     <h2>Enter the details for the new item.</h2>
-                    <input className="item-form-name item-form-input" type="text" name="name" onChange={this.onChange} />
-                    <input className="item-form-category item-form-input" type="text" name="category" placeholder="Item Category" onChange={this.onChange} />
-                    <textarea className="item-form-detail item-form-input" name="description" placeholder="Item Description" onChange={this.onChange} />
+                    <input className="item-form-name item-form-input" type="text" name="name" value={this.state.placeholder.name} onChange={this.onChange} />
+                    <input className="item-form-category item-form-input" type="text" name="category" value={this.state.placeholder.category} onChange={this.onChange} />
+                    <textarea className="item-form-detail item-form-input" name="description" value={this.state.placeholder.description} onChange={this.onChange} />
                 </div>
                 <div className="item-form-row-two">
                     <div className="item-form-row-two-unit-price">
-                        <input className="item-form-unit" type="number" name="unit" placeholder="Unit Size" onChange={this.onChange} />
-                        <input className="item-form-unit" type="number" name="price" placeholder="Unit Price" onChange={this.onChange} />
+                        <input className="item-form-unit" type="number" name="unit" value={this.state.placeholder.unit} onChange={this.onChange} />
+                        <input className="item-form-unit" type="number" name="price" value={this.state.placeholder.price} onChange={this.onChange} />
                     </div>
                     <div className="item-form-row-two-inventory">
                     <input className="item-form-inventory" type="number" name="inventory" placeholder="Inventory Ct." onChange={this.onChange} />
@@ -109,7 +109,7 @@ export class ItemForm extends Component {
                 </div>
             </form>
         )
-        } else if(this.state.ready === true && this.props.id === false) {return(
+        } else if(this.state.ready === true && this.props.id == false) {return(
             <form className="item-form" onSubmit={this.onSubmit}>
                 <div className="item-form-image">
                     <h3 style={{color: "white"}}>Placeholder</h3>
@@ -117,7 +117,7 @@ export class ItemForm extends Component {
                 </div>
                 <div className="item-form-row-one">
                     <h2>Enter the details for the new item.</h2>
-                    <input className="item-form-name item-form-input" type="text" name="name" onChange={this.onChange} />
+                    <input className="item-form-name item-form-input" type="text" name="name" placeholder="Item Name" onChange={this.onChange} />
                     <input className="item-form-category item-form-input" type="text" name="category" placeholder="Item Category" onChange={this.onChange} />
                     <textarea className="item-form-detail item-form-input" name="description" placeholder="Item Description" onChange={this.onChange} />
                 </div>
