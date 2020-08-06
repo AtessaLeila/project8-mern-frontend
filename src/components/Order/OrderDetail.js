@@ -41,11 +41,17 @@ class OrderDetail extends Component {
   displayItems() {
     let orderItems = this.state.items.map((value, index) => {
       let singleItem = (
-        <ul classname="order-item-cost-ul">
-          <li>{value.itemName}</li>
-          <li>{value.quantity}</li>
-          <li>{value.unitPrice}</li>
-        </ul>
+        <div>
+          <ul classname="order-item-name">
+            <li>{value.itemName}</li>
+          </ul>
+          <ul classname="order-item-quantity">
+            <li>{value.quantity}</li>
+          </ul>
+          <ul classname="order-item-price">
+            <li>{value.unitPrice}</li>
+          </ul>
+        </div>
       );
       return singleItem;
     });

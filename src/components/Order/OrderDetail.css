@@ -13,6 +13,10 @@
   display: inline-block;
 }
 
+.order-item-cost-ul {
+  float: left;
+}
+
 .items-ordered-box {
   border-style: outset;
   width: 100%;
@@ -24,8 +28,4 @@
 .order-detail-cost {
   text-align: right;
   margin-right: 100px;
-}
-
-.order-item-cost-ul {
-  float: left;
 }
