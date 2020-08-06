@@ -49,8 +49,60 @@ class OrderSidebar extends Component {
         }
     }
 
-    onSubmit = () => {
-
+    onSubmit = (e) => { 
+        e.preventDefault()
+        
+        fetch(`${this.props.url}/order`)
+            .then(res => res.json())
+            .then( res => {
+                if (this.state.status !== null){
+                    let newArr = res.map((val, idx) => {
+                        let newVal
+                        if (val.status === this.state.status) {
+                            newVal = val
+                            return newVal
+                        }
+                    })
+                    return newArr.filter(obj => obj !== undefined)
+                } else {return res}
+            })
+            .then( arr => {
+                if (this.state.dueDate !== null){
+                    let newArr = arr.map((val, idx) => {
+                        let newVal
+                        if (val.dueDate === this.state.dueDate) {
+                            newVal = val
+                            return newVal
+                        }
+                    })
+                    return newArr.filter(obj => obj !== undefined)
+                } else {return arr}
+            })
+            .then( arr => {
+                 if (this.state.customer !== null){
+                     let newArr = arr.map((val, idx) => {
+                         let newVal
+                         if (val.customer.name === this.state.customer) {
+                             newVal = val
+                             return newVal
+                         }
+                     })
+                     return newArr.filter(obj => obj !== undefined)
+                 }
+                 else {return arr}
+             })
+             .then( arr => {
+                 if (this.state.orderNumber !== null){
+                     let newArr = arr.map((val, idx) => {
+                         let newVal
+                         if (val.orderNumber === this.state.orderNumber) {
+                             newVal = val
+                             return newVal
+                         }
+                     })
+                     return newArr.filter(obj => obj !== undefined)
+                 } else {return arr}
+             })
     }
 
     render(){
@@ -74,7 +126,7 @@ class OrderSidebar extends Component {
         return (
             <div className="order-sidebar-container">
                 <h2>Filters</h2>
-                <form>
+                <form onSubmit={this.onSubmit}>
                     <div className="order-sidebar-order-no">
                         <h3>Order #</h3>
                         <input type="number" name="orderNumber" style={field} onChange={this.typeChange} />
@@ -92,7 +144,8 @@ class OrderSidebar extends Component {
                         <h3>Due Date</h3>
                         <input type="text" name="dueDate" style={field} onChange={this.typeChange}/>
                     </div>
-                    <Button type="submitbtn" label="Submit" />
+                    <input type="submit" />
+                    {/* <Button type="submitbtn" label="Submit" /> */}
                 </form>
             </div>
         )
