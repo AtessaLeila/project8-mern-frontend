@@ -2,9 +2,6 @@ import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import Button from "../Button/Button"
 
-
-
-
 export class ItemForm extends Component {
     constructor(props){
         super(props)
@@ -20,6 +17,24 @@ export class ItemForm extends Component {
         }
     }
 
+    componentDidMount(){
+        if (this.props.id){
+            fetch(`${this.props.url}/item/${this.props.id}`)
+            .then(res => res.json())
+            .then(res =>{
+                this.setState({
+                    name: ""
+                    ,description: ""
+                    ,category: ""
+                    ,unit: 0
+                    ,price: 0
+                    ,inventory: 0
+                    ,image: ""
+                    ,placeholder: {}
+                })
+            })
+        }
+    }
 
     onChange = (e) =>{
         e.preventDefault()
@@ -33,7 +48,7 @@ export class ItemForm extends Component {
     onSubmit = (e) =>{
         e.preventDefault()
         const options = {
-            "method": "POST"
+            "method": this.props.method
             ,"headers" : { "Content-Type" : "application/json"}
             ,body: JSON.stringify(this.state)
         } 
@@ -50,7 +65,6 @@ export class ItemForm extends Component {
                 ,image: ""
                 ,success: true
             })
-            //this.props.history.push("/catalog")
         })
 
 

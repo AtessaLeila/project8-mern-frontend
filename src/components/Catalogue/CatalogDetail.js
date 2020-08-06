@@ -35,7 +35,7 @@ export class CatalogDetail extends Component {
     }
 
     editItem = () => {
-
+      
     }
 
     deleteItem = () =>{
