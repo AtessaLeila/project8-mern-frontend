@@ -81,7 +81,7 @@ export class ItemForm extends Component {
              <div><h2>Success!</h2></div>
          )       
         }
-        else if (this.state.ready === true && this.props.id == true){
+        else if (this.state.ready && this.props.id){
         return (
             <form className="item-form" onSubmit={this.onSubmit}>
                 <div className="item-form-image">
@@ -109,7 +109,7 @@ export class ItemForm extends Component {
                 </div>
             </form>
         )
-        } else if(this.state.ready === true && this.props.id == false) {return(
+        } else if(this.state.ready /* && this.props.id == false */) {return(
             <form className="item-form" onSubmit={this.onSubmit}>
                 <div className="item-form-image">
                     <h3 style={{color: "white"}}>Placeholder</h3>
@@ -135,7 +135,7 @@ export class ItemForm extends Component {
                     <Button as="submit" type="edit" label="Create" />
                 </div>
             </form>
-        )} else {return null}
+        )} else {return <p>something</p>}
     }
 }
 

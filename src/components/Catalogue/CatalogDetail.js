@@ -77,7 +77,7 @@ export class CatalogDetail extends Component {
                 <div onClick={this.deleteItem} >
                     <Button type="delete" label="Delete" />
                 </div>
-                <div>
+                <div onClick={this.editItem}>
                     <Button type="edit" label="Edit"  />
                 </div>
             </div>
