@@ -97,22 +97,22 @@ export class ItemForm extends Component {
                 </div>
                 <div className="item-form-row-one">
                     <h2>Enter the details for the new item.</h2>
-                    <input className="item-form-name item-form-input" type="text" name="name" value={this.state.placeholder.name} onChange={this.onChange} />
-                    <input className="item-form-category item-form-input" type="text" name="category" value={this.state.placeholder.category} onChange={this.onChange} />
-                    <textarea className="item-form-detail item-form-input" name="description" value={this.state.placeholder.description} onChange={this.onChange} />
+                    <input className="item-form-name item-form-input" type="text" name="name" value={this.state.name} onChange={this.onChange} />
+                    <input className="item-form-category item-form-input" type="text" name="category" value={this.state.category} onChange={this.onChange} />
+                    <textarea className="item-form-detail item-form-input" name="description" value={this.state.description} onChange={this.onChange} />
                 </div>
                 <div className="item-form-row-two">
                     <div className="item-form-row-two-unit-price">
-                        <input className="item-form-unit" type="number" name="unit" value={this.state.placeholder.unit} onChange={this.onChange} />
-                        <input className="item-form-unit" type="number" name="price" value={this.state.placeholder.unitPrice} onChange={this.onChange} />
+                        <input className="item-form-unit" type="number" name="unit" value={this.state.unit} onChange={this.onChange} />
+                        <input className="item-form-unit" type="number" name="price" value={this.state.unitPrice} onChange={this.onChange} />
                     </div>
                     <div className="item-form-row-two-inventory">
-                    <input className="item-form-inventory" type="number" name="inventory" value={this.state.placeholder.inventoryCount} onChange={this.onChange} />
+                    <input className="item-form-inventory" type="number" name="inventory" value={this.state.inventoryCount} onChange={this.onChange} />
                     </div>
                 </div>
                 <div className="item-form-buttons">
                     <Link to="/catalog"><Button type="delete" label="Cancel" /></Link>
-                    <Button as="submit" type="edit" label="Create" />
+                    <Button as="submit" type="edit" label="Submit" />
                 </div>
             </form>
         )
