@@ -4,6 +4,7 @@ import Button from "../Button/Button";
 import Searchfield from "../Searchfield/Searchfield";
 
 function CatalogueHeader(props) {
+
     const searchFieldStyle = {
         border: "3px solid #F1F3F4",
         fontSize: "15px",

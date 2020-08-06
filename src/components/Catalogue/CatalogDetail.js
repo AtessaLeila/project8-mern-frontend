@@ -74,8 +74,9 @@ export class CatalogDetail extends Component {
                     </div>
                 </div>
             )
-        } else { return <h3>What?</h3> }
+        } else { return <h3>What?</h3> }r
     }
+  }
 }
 
-export default CatalogDetail
+export default CatalogDetail;
