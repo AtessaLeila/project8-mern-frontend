@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Button from "../Button/Button.stories";
 import "./OrderDetail.css";
 
 class OrderDetail extends Component {
@@ -15,6 +16,7 @@ class OrderDetail extends Component {
       total: 0,
       status: "",
       items: [],
+      statusColor: "",
     };
     this.id = "5f2b2c159f5fa00004aba113";
   }
@@ -35,22 +37,25 @@ class OrderDetail extends Component {
           status: res.status,
           items: res.orderInfo,
         });
+        if (this.state.status === "Ready") {
+          this.setState({ statusColor: "#ECE2BE" });
+        }
       });
   }
 
   displayItems() {
     let orderItems = this.state.items.map((value, index) => {
       let singleItem = (
-        <div>
-          <ul classname="order-item-name">
-            <li>{value.itemName}</li>
-          </ul>
-          <ul classname="order-item-quantity">
-            <li>{value.quantity}</li>
-          </ul>
-          <ul classname="order-item-price">
-            <li>{value.unitPrice}</li>
-          </ul>
+        <div className="order-box">
+          <div className="order-box-item">
+            <p className="order-val">{value.itemName}</p>
+          </div>
+          <div className="order-box-item">
+            <p className="order-val">{value.quantity}</p>
+          </div>
+          <div className="order-box-item">
+            <p className="order-val">{value.unitPrice}</p>
+          </div>
         </div>
       );
       return singleItem;
@@ -58,26 +63,48 @@ class OrderDetail extends Component {
     return orderItems;
   }
 
+  setStatusButton() {}
+
   render() {
     return (
       <div className="order-detail">
         <div className="order-detail-status">
-          <h2>Status: "{this.state.status}"</h2>
+          <h2>
+            Status:{" "}
+            <span style={{ backgroundColor: `${this.state.statusColor}` }}>
+              {this.state.status}
+            </span>
+          </h2>
         </div>
         <div className="order-detail-info">
-          <div className=""> </div>
-          <p>Order # {this.state.orderNumber}</p>
-          <p>Name: {this.state.customerName}</p>
-          <p>Due Date: {this.state.dueDate}</p>
-          <p>Address: {this.state.customerAddress}</p>
-          <p>Phone #: {this.state.customerPhone}</p>
+          <p>
+            <strong>Order Number:</strong> {this.state.orderNumber}
+          </p>
+          <p>
+            <strong>Name:</strong> {this.state.customerName}
+          </p>
+          <p>
+            <strong>Due Date:</strong> {this.state.dueDate}
+          </p>
+          <p>
+            <strong> Address:</strong> {this.state.customerAddress}
+          </p>
+          <p>
+            <strong>Phone Number:</strong> {this.state.customerPhone}
+          </p>
         </div>
         <div className="items-ordered-box">
           <div>
-            <h3>Items Ordered</h3>
+            <h2>Items Ordered</h2>
           </div>
-          <div classname="displayed-items">{this.displayItems()}</div>
+          <div className="order-box-header">
+            <h4>Name</h4>
+            <h4>Quantity</h4>
+            <h4>Price</h4>
+          </div>
+          <div className="displayed-items">{this.displayItems()}</div>
         </div>
+        <div></div>
         <div className="order-detail-cost">
           <h3>Sub-Total: {this.state.subTotal}</h3>
           <h3>Tax: {this.state.tax}</h3>
@@ -89,4 +116,3 @@ class OrderDetail extends Component {
 }
 
 export default OrderDetail;
- */
