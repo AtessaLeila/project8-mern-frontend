@@ -121,8 +121,10 @@ class App extends Component {
         <header className="nav">
           <h1>Welcome to Narwhal Bakery</h1>
           <div className="header-buttons">
+            <div className="nav-buttons">
             <Link to="/catalog/"> <Button type="create" label="My Catalog" /></Link>
             <Link to="/orders"> <Button type="create" label="My Orders" /></Link>
+            </div>
             <Link to="/logout"><Button type="create" label="Log Out" /></Link>
           </div>
         </header>
