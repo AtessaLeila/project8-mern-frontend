@@ -7,6 +7,9 @@ import Button from "./components/Button/Button";
 import SignUpForm from './components/SignUpForm/SignUpForm'
 import LogInForm from './components/LogInForm/LogInForm'
 import LogOut from './components/LogOut/LogOut'
+import axios from 'axios'
+import loginModal from './components/LogInForm/LoginModal'
+import LoginModal from "./components/LogInForm/LoginModal";
 
 let url = "https://group-project-mern-backend.herokuapp.com"
 
@@ -50,15 +53,31 @@ class App extends Component {
   }
 
   handleSignUp(e) {
-
+    e.preventDefault()
+    axios.post(`${url}/users/signup`, {
+      email: this.state.email,
+      password: this.state.password
+    })
+    .then(response => {
+      localStorage.token = response.data.token
+      this.setState({ isLoggedIn: true })
+    })
+    .catch(err => console.log(err))
   }
 
   handleLogIn(e) {
 
+ 
+
   }
 
-
+ 
   render() {
+
+    if (this.state.isLoggedIn !== true){
+      return 
+    }
+    else {
     return (
       <div className="App">
         <header className="nav">
@@ -114,6 +133,7 @@ class App extends Component {
         </div>
       </div>
     );
+          }
   }
 }
 
