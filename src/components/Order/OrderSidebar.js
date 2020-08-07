@@ -123,6 +123,15 @@ class OrderSidebar extends Component {
             color: "#757575"
         }
 
+        const subBut = {
+            backgroundColor: "#9fc3cc",
+            color: "#3c3c3c",
+            border: "none",
+            borderRadius: "2px",
+            padding: "10px 20px",
+            marginTop: "40px"
+        }
+
         return (
             <div className="order-sidebar-container">
                 <h2>Filters</h2>
@@ -144,7 +153,7 @@ class OrderSidebar extends Component {
                         <h3>Due Date</h3>
                         <input type="text" name="dueDate" style={field} onChange={this.typeChange}/>
                     </div>
-                    <input type="submit" />
+                    <input type="submit" style={subBut} />
                     {/* <Button type="submitbtn" label="Submit" /> */}
                 </form>
             </div>
