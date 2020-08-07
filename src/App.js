@@ -19,7 +19,6 @@ class App extends Component {
             <Link to="/orders"> <Button type="create" label="My Orders" /></Link>
           </div>
         </header>
-        <body>
           <div className="container">
             <Route path="/" 
               render={() =>{return <Redirect to="/catalog"/>}} 
@@ -39,7 +38,6 @@ class App extends Component {
             />
 
           </div>
-        </body>
       </div>
     );
   }

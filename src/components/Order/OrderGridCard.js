@@ -29,7 +29,6 @@ class OrderGridCard extends Component {
 
     componentDidUpdate(props) {
         if (props.orderList !== this.props.orderList){
-                console.log(this.props.orderList)
                 this.setState({
                     orders: this.props.orderList,
                     ready: true
