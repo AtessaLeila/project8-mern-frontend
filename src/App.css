@@ -13,13 +13,20 @@
   background-color: #F1FAFD;
   height: 10vh;
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
 .header-buttons {
-  width: 40%;
+  width: 55%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  margin-right: 2%;
+}
+.nav-buttons {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
 }
 
 /* body {
@@ -54,11 +61,11 @@
 }
 
 .new-item-button {
-  margin-right: 20px;
+  margin-right: 1%;
 }
 
 .catalogue-searchfield {
-  margin-right: 20px;
+  margin-right: 7%;
 }
 
 /* CATALOGUE BODY */
