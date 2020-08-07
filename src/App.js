@@ -23,7 +23,8 @@ class App extends Component {
         <body>
           <div className="container">
             <Route path="/" 
-              render={() =>{return <Redirect to="/catalog"/>}} />
+              render={() =>{return <Redirect to="/catalog"/>}} 
+              exact />
             <Route
               path="/orders"
               render={() => {

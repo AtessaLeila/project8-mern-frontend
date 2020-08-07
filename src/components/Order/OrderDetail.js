@@ -17,12 +17,14 @@ class OrderDetail extends Component {
       status: "",
       items: [],
       statusColor: "",
+      ready: false
     };
     this.id = "5f2c4dc6dd12ce0004e869b4";
   }
 
   componentDidMount() {
-    fetch(`${this.props.url}/order/id/${this.id}`)
+    console.log("running")
+    fetch(`${this.props.url}/order/id/${this.props.id}`)
       .then(res => res.json())
       .then(res => {
         // console.log(res);
@@ -37,6 +39,7 @@ class OrderDetail extends Component {
           total: res.total,
           status: res.status,
           items: res.orderInfo,
+          ready: true
         });
         if (this.state.status === "Ready") {
           this.setState({ statusColor: "#ECE2BE" });
@@ -137,6 +140,7 @@ class OrderDetail extends Component {
   };
 
   render() {
+    if (this.state.ready === true){
     return (
       <div className="order-detail">
         <div className="order-detail-status">
@@ -188,7 +192,8 @@ class OrderDetail extends Component {
           </p>
         </div>
       </div>
-    );
+    )}
+    else {return null}
   }
 }
 

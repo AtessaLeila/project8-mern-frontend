@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Dropdown from '../Dropdown/Dropdown'
 import Button from '../Button/Button'
 import Searchfield from '../Searchfield/Searchfield'
+import axios from 'axios';
 
 class OrderSidebar extends Component {
     constructor(props){
@@ -103,6 +104,29 @@ class OrderSidebar extends Component {
                      return newArr.filter(obj => obj !== undefined)
                  } else {return arr}
              })
+             .then(arr =>{
+                 this.props.setList(arr)
+                 this.setState({
+                    orderNumber: null
+                    ,status: null
+                    ,customer: null
+                    ,dueDate: null
+                 })
+                 
+             })
+    }
+
+    clearFilters = () => {
+       /*  axios.get('https://group-project-mern-backend.herokuapp.com/order')
+                .then(response => {
+                    this.props.setList(response.data)
+                })
+                .catch(function (error) {
+                    console.log(error);
+                }) */
+
+                window.location = "/orders"
+        
     }
 
     render(){
@@ -121,6 +145,15 @@ class OrderSidebar extends Component {
             width: "200px",
             display: "block",
             color: "#757575"
+        }
+
+        const subBut = {
+            backgroundColor: "#9fc3cc",
+            color: "#3c3c3c",
+            border: "none",
+            borderRadius: "2px",
+            padding: "12px 20px",
+            marginRight: "20px"
         }
 
         return (
@@ -144,8 +177,12 @@ class OrderSidebar extends Component {
                         <h3>Due Date</h3>
                         <input type="text" name="dueDate" style={field} onChange={this.typeChange}/>
                     </div>
-                    <input type="submit" />
-                    {/* <Button type="submitbtn" label="Submit" /> */}
+                    <div className ="order-sidebar-buttons-container">
+                        <input type="submit" style={subBut} />
+                        <div onClick={this.clearFilters}>
+                        <Button type="delete" label="Clear" />
+                        </div>
+                    </div>
                 </form>
             </div>
         )

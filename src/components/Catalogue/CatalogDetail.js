@@ -2,12 +2,10 @@ import React, { Component } from 'react'
 import Button from '../Button/Button'
 import { Redirect, Link } from 'react-router-dom'
 
-
 export class CatalogDetail extends Component {
     constructor(props) {
         super(props)
         this.state = {
-
             id: ""
             ,name: ""
             ,description: ""
@@ -114,6 +112,6 @@ export class CatalogDetail extends Component {
         } else {return null}
     }
   }
-}
+
 
 export default CatalogDetail;

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import CardOrder from '../CardOrder/CardOrder';
+import {Link} from 'react-router-dom'
 
 
 
@@ -14,31 +15,48 @@ class OrderGridCard extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://group-project-mern-backend.herokuapp.com/order')
-            .then(response => {
+         
+            axios.get('https://group-project-mern-backend.herokuapp.com/order')
+                .then(response => {
+                    this.setState({
+                        orders: response.data,
+                        ready: true
+                    })
+                    console.log(this.state.orders)
+
+                })
+                .catch(function (error) {
+                    console.log(error);
+                })
+    }
+
+    componentDidUpdate(props) {
+        console.log("reset")
+        if (props.orderList !== this.props.orderList){
+                console.log(this.props.orderList)
                 this.setState({
-                    orders: response.data,
+                    orders: this.props.orderList,
                     ready: true
                 })
-                console.log(this.state.orders)
-
-            })
-            .catch(function (error) {
-                console.log(error);
-            })
+        }
     }
 
     displayOrders() {
         let ordersArr = this.state.orders
         ordersArr = ordersArr.map((val, idx) => {
 
-            let newOrder = <CardOrder style={{ display: "flex", flexWrap: "wrap" }} orderNumber={val.orderNumber} customer={val.customer.name} occasion={val.occasion} dueDate={val.dueDate} key={idx} />;
+            let newOrder = 
+            
+            <CardOrder id={val._id} orderNumber={val.orderNumber} customer={val.customer.name} occasion={val.occasion} dueDate={val.dueDate} key={idx} setId={this.setId} />;
             return (
                 newOrder
             )
         })
-        console.log(ordersArr)
         return ordersArr
+    }
+
+    setId = (id) =>{
+        this.props.setId(id)
     }
 
     render() {
@@ -51,3 +69,4 @@ class OrderGridCard extends Component {
 }
 
 export default OrderGridCard;
+
