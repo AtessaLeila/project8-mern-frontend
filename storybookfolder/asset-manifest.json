@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/project8-mern-frontend/app/static/css/main.05b4934d.chunk.css",
+    "main.js": "/project8-mern-frontend/app/main.2ab857583cdd6b0637c1.bundle.js",
+    "main.css.map": "/project8-mern-frontend/app/static/css/main.05b4934d.chunk.css.map",
+    "main.js.map": "/project8-mern-frontend/app/main.2ab857583cdd6b0637c1.bundle.js.map",
+    "runtime~main.js": "/project8-mern-frontend/app/runtime~main.2ab857583cdd6b0637c1.bundle.js",
+    "runtime~main.js.map": "/project8-mern-frontend/app/runtime~main.2ab857583cdd6b0637c1.bundle.js.map",
+    "vendors~main.js": "/project8-mern-frontend/app/vendors~main.2ab857583cdd6b0637c1.bundle.js",
+    "vendors~main.js.map": "/project8-mern-frontend/app/vendors~main.2ab857583cdd6b0637c1.bundle.js.map",
+    "iframe.html": "/project8-mern-frontend/app/iframe.html",
+    "precache-manifest.a3a0b560ec22fd00d77e99e95e8d299b.js": "/project8-mern-frontend/app/precache-manifest.a3a0b560ec22fd00d77e99e95e8d299b.js",
+    "service-worker.js": "/project8-mern-frontend/app/service-worker.js",
+    "vendors~main.2ab857583cdd6b0637c1.bundle.js.LICENSE.txt": "/project8-mern-frontend/app/vendors~main.2ab857583cdd6b0637c1.bundle.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "runtime~main.2ab857583cdd6b0637c1.bundle.js",
+    "vendors~main.2ab857583cdd6b0637c1.bundle.js",
+    "static/css/main.05b4934d.chunk.css",
+    "main.2ab857583cdd6b0637c1.bundle.js"
+  ]
+}

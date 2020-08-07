@@ -26,7 +26,9 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build -e app"
+    "deploy": "gh-pages -d build -e app",
+    "deploy-storybook": "storybook-to-ghpages",
+    "build-storybook": "build-storybook -c .storybook -o storybookfolder"
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -1,9 +1,16 @@
 import React, { Component } from 'react'
 
+
 import './SignUpForm.css'
 
 class SignUpForm extends Component {
+
+
+  
+
   render () {
+    if (this.props.isLoggedIn !== true){
+      
     return (
       <div>
         <h2>Sign Up</h2>
@@ -22,6 +29,9 @@ class SignUpForm extends Component {
         </form>
       </div>
     )
+    }
+    else {return <div><h1>Success! You're now signed up and logged in</h1></div>}
+
   }
 }
 

@@ -1,19 +1,25 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
-import './LogOut.css'
+import "./LogOut.css";
 
 class LogOut extends Component {
-  render () {
+  render() {
     return (
       <div>
-        <h2>Log Out</h2>
-
-        <form>
-          <input value='Log Out' type='submit' onClick={this.props.handleLogOut} />
-        </form>
+        <div className="logout-page">
+          <h2> Thanks for Ordering!</h2>
+          <form className="logout-form">
+            <input
+              className="logout-input"
+              value="Log Out"
+              type="submit"
+              onClick={this.props.handleLogOut}
+            />
+          </form>
+        </div>
       </div>
-    )
+    );
   }
 }
 
-export default LogOut
+export default LogOut;
