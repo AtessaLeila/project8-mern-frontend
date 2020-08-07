@@ -106,13 +106,19 @@ class OrderSidebar extends Component {
              })
              .then(arr =>{
                  this.props.setList(arr)
+                 this.setState({
+                    orderNumber: null
+                    ,status: null
+                    ,customer: null
+                    ,dueDate: null
+                 })
              })
     }
 
     clearFilters = () => {
         axios.get('https://group-project-mern-backend.herokuapp.com/order')
                 .then(response => {
-                    this.props.setList(response)
+                    this.props.setList(response.data)
                 })
                 .catch(function (error) {
                     console.log(error);
@@ -143,8 +149,8 @@ class OrderSidebar extends Component {
             color: "#3c3c3c",
             border: "none",
             borderRadius: "2px",
-            padding: "10px 20px",
-            marginTop: "40px"
+            padding: "12px 20px",
+            marginRight: "20px"
         }
 
         return (
@@ -168,9 +174,12 @@ class OrderSidebar extends Component {
                         <h3>Due Date</h3>
                         <input type="text" name="dueDate" style={field} onChange={this.typeChange}/>
                     </div>
-                    <input type="submit" style={subBut} />
-                    <button label="Clear" onClick={this.clearFilters}/>
-                    {/* <Button type="submitbtn" label="Submit" /> */}
+                    <div className ="order-sidebar-buttons-container">
+                        <input type="submit" style={subBut} />
+                        <div onClick={this.clearFilters}>
+                        <Button type="delete" label="Cancel" />
+                        </div>
+                    </div>
                 </form>
             </div>
         )

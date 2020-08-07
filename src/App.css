@@ -334,6 +334,14 @@ body {
   justify-content: center;
 }
 
+.order-sidebar-buttons-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 25px;
+}
+
+
 .order-detail {
   background-color: #ffffff;
   width: 76%;
