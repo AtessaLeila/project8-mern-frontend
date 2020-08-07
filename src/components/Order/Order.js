@@ -11,7 +11,7 @@ class Order extends Component{
         super(props)
         this.state = {
             currentId: ""
-            ,orderList: []
+            ,orderList: null
         }
     }
 
@@ -42,7 +42,14 @@ render(){
                     <OrderSidebar url={this.props.url} setList={this.setList} />
                 </div>
                 <Route path="/orders"
-                    render={() => <OrderGridCard setId={this.setId} /> }
+                    render={() => {
+                    if (this.state.orderList === null){
+                    return <OrderGridCard setId={this.setId} /> 
+                    }
+                    else {
+                        return <OrderGridCard setId={this.setId} orderList={this.state.orderList} />
+                    }
+                }}
                     exact />
                     
                 

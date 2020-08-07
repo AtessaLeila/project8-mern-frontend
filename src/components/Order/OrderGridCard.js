@@ -15,18 +15,23 @@ class OrderGridCard extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://group-project-mern-backend.herokuapp.com/order')
-            .then(response => {
-                this.setState({
-                    orders: response.data,
-                    ready: true
-                })
-                console.log(this.state.orders)
+        if (this.props.orderList){
+            this.set
+        }
+        else {
+            axios.get('https://group-project-mern-backend.herokuapp.com/order')
+                .then(response => {
+                    this.setState({
+                        orders: response.data,
+                        ready: true
+                    })
+                    console.log(this.state.orders)
 
-            })
-            .catch(function (error) {
-                console.log(error);
-            })
+                })
+                .catch(function (error) {
+                    console.log(error);
+                })
+        }
     }
 
     displayOrders() {
