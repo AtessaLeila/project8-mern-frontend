@@ -52,7 +52,7 @@ class Searchfield extends Component {
     return (
         <div>
             <div className="form">
-                <form onSubmit={this.onSubmit}>
+                <form className="searchfield-form"onSubmit={this.onSubmit}>
                     <input style={this.props.style}
                         placeholder={this.props.placeholder}
                         name={this.props.name}

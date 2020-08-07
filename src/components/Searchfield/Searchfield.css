@@ -2,6 +2,11 @@
     display: inline-block
 }
 
+.searchfield-form {
+    display: flex;
+    align-items: center;
+}
+
 .btn {
     display: inline-block
 }
