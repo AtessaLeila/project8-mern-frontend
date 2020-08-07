@@ -3,7 +3,7 @@ import axios from 'axios';
 import './CatalogueSidebar.css'
 import Box from '../Box/Box'
 
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 class CatalogueSidebar extends Component {
@@ -33,7 +33,7 @@ class CatalogueSidebar extends Component {
         let itemsArr = this.state.items
         itemsArr = itemsArr.map((val, idx) => {
 
-            let newItem = <div className="link"><Link to={"/catalog/item/id/" + val._id} id={val._id} onClick={() => { this.setId(val._id) }}><p><Box id={val._id} name={val.name} image={val.image} price={val.unitPrice} key={idx} /></p></Link></div>;
+            let newItem = <div key={idx}className="link"><Link to={"/catalog/item/id/" + val._id} id={val._id} onClick={() => { this.setId(val._id) }}><p><Box id={val._id} name={val.name} image={val.image} price={val.unitPrice} key={idx} /></p></Link></div>;
             return (
                 newItem
             )

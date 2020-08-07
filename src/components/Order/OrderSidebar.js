@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import Dropdown from '../Dropdown/Dropdown'
 import Button from '../Button/Button'
-import Searchfield from '../Searchfield/Searchfield'
-import axios from 'axios';
 
 class OrderSidebar extends Component {
     constructor(props){
@@ -61,8 +59,8 @@ class OrderSidebar extends Component {
                         let newVal
                         if (val.status === this.state.status) {
                             newVal = val
-                            return newVal
                         }
+                        return newVal
                     })
                     return newArr.filter(obj => obj !== undefined)
                 } else {return res}
@@ -73,8 +71,8 @@ class OrderSidebar extends Component {
                         let newVal
                         if (val.dueDate === this.state.dueDate) {
                             newVal = val
-                            return newVal
                         }
+                        return newVal
                     })
                     return newArr.filter(obj => obj !== undefined)
                 } else {return arr}
@@ -85,8 +83,8 @@ class OrderSidebar extends Component {
                          let newVal
                          if (val.customer.name === this.state.customer) {
                              newVal = val
-                             return newVal
                          }
+                         return newVal
                      })
                      return newArr.filter(obj => obj !== undefined)
                  }
@@ -98,8 +96,8 @@ class OrderSidebar extends Component {
                          let newVal
                          if (val.orderNumber === this.state.orderNumber) {
                              newVal = val
-                             return newVal
                          }
+                         return newVal
                      })
                      return newArr.filter(obj => obj !== undefined)
                  } else {return arr}

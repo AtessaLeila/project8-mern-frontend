@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Button from '../Button/Button'
-import { Redirect, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export class CatalogDetail extends Component {
     constructor(props) {
@@ -37,7 +37,7 @@ export class CatalogDetail extends Component {
     }
 
     componentDidUpdate(props) {
-        if (props.id != this.props.id) {
+        if (props.id !== this.props.id) {
             fetch(`${this.props.url}/item/id/${this.props.id}`)
                 .then(res => res.json())
                 .then(res => {

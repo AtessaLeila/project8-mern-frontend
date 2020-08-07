@@ -4,7 +4,6 @@ import "./App.css";
 import Catalogue from "./components/Catalogue/Catalogue";
 import Order from "./components/Order/Order";
 import Button from "./components/Button/Button";
-import CatalogueSidebar from "./components/Catalogue/CatalogueSidebar";
 
 let url = "https://group-project-mern-backend.herokuapp.com"
 
