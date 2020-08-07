@@ -1,0 +1,140 @@
+ 
+ 
+ Back End
+Database Collections 
+Items
+Orders
+Customers(?)
+Item Attributes
+-name
+-description
+-image - can we host a file rather than a url?
+-unit
+-unit price
+-inventory count
+Orders Attributes
+-Order number 
+-customer {
+	name
+	address
+	phone
+	terms(?)
+	}
+-occasion
+-items ordered {	
+	item id
+	quantity
+	unit price
+	}
+
+-due date
+-subtotal
+-tax
+-total
+-status - unconfirmed, confirmed, ready, delivered
+
+
+
+
+
+Front End
+Root
+Header <>
+Route Components
+Homepage <>
+-Header <>
+
+Catalogue <>
+	-Header
+ -Items sidebar <>
+- Item detail <>
+-New/Edit Item Form <>
+
+Orders <>
+-Filters Sidebar <>
+-Order Grid <>
+-Order details <>
+
+Component Details
+Header
+-hero image (home)
+- buttons/links to catalogue and orders
+- user settings(?)
+
+Catalogue
+-Header
+- Search Form <>
+		-entry blank
+		-submit button
+- New Item Button
+Items Sidebar
+-Header
+-List
+   - Item cards <>
+	- Thumbnail
+	- Item Name
+	- amount in inventory
+
+Item Detail
+ - Item Name
+- Item Description
+- Item Image
+-Unit
+-Unit Price
+-Inventory
+-Edit Button
+-Delete Button
+
+New/Edit Item Form
+-Entry Blanks for:
+ - Item Name
+- Item Description
+- Item Image
+-Unit
+-Unit Price
+-Inventory
+-Create/Update button
+
+Orders Filters Sidebar
+- Header/title
+- Status dropdown
+- Customer dropdown
+- Order Due Date search blank
+- Submit button
+
+Order Grid
+- Grid Card <>
+	- Customer Name
+	-Status
+	-Due Date
+Order Detail
+- Customer name
+- Customer Address
+- Customer Phone
+- Due Date
+- Status
+- Sub
+- Order number
+-occasion
+- items ordered	
+- item id
+- quantity
+- unit price 
+-subtotal
+-tax
+-total
+
+
+App Routes
+
+“/” - Homepage of the app
+
+“/catalog” - Display Catalog Component
+	“/catalog/new” - Display New/Edit Item form component
+	“/catalog/category/${category}” - Filter items by category
+	“/catalog/item/${_id} - Show item detail component for x item
+
+“/orders” - Display Order component with grid
+	“/orders?due=xx?name=?xx …” -Show items in grid based on filters
+	“/orders/id/${id}” - show order detail for specific order, hide grid.
+  
