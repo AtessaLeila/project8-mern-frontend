@@ -108,6 +108,10 @@ class OrderSidebar extends Component {
              })
     }
 
+    clearFilters = () => {
+        this.props.setList(null)
+    }
+
     render(){
         const field = {
             border: "3px solid #F1F3F4",
@@ -157,6 +161,7 @@ class OrderSidebar extends Component {
                         <input type="text" name="dueDate" style={field} onChange={this.typeChange}/>
                     </div>
                     <input type="submit" style={subBut} />
+                    <button label="Clear" onClick={this.clearFilters}/>
                     {/* <Button type="submitbtn" label="Submit" /> */}
                 </form>
             </div>

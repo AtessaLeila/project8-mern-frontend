@@ -24,8 +24,9 @@ class Order extends Component{
     }
 
     setList = list => {
+        console.log(list)
         this.setState({
-            orderlist: list
+            orderList: list
         })
     }
 
@@ -44,7 +45,7 @@ render(){
                 <Route path="/orders"
                     render={() => {
                     if (this.state.orderList === null){
-                    return <OrderGridCard setId={this.setId} /> 
+                    return <OrderGridCard setId={this.setId}  /> 
                     }
                     else {
                         return <OrderGridCard setId={this.setId} orderList={this.state.orderList} />
@@ -59,8 +60,7 @@ render(){
                             return(<OrderDetail url={this.props.url} setId={this.setId} id={this.state.currentId} />)
                         }
                         else {return null}
-                        }} exact />{/* <OrderDetail setId={this.setId} id={this.state.currentId} /> }
-                    exact /> */}
+                        }} exact />
                 
             </div>
         </div> 

@@ -15,13 +15,14 @@ class OrderGridCard extends Component {
     }
 
     componentDidMount() {
-        if (this.props.orderList){
+        if (this.props.orderList && this.props.orderList !== null){
             this.setState({
                 orders: this.props.orderList,
                 ready: true
             })
         }
         else {
+           
             axios.get('https://group-project-mern-backend.herokuapp.com/order')
                 .then(response => {
                     this.setState({
@@ -37,6 +38,34 @@ class OrderGridCard extends Component {
         }
     }
 
+    componentDidUpdate(props) {
+        console.log("reset")
+        if (props.orderList !== this.props.orderList){
+            if (this.props.orderList !== null) {
+                this.setState({
+                    orders: this.props.orderList,
+                    ready: true
+                })
+            }
+        }
+        else {
+            axios.get('https://group-project-mern-backend.herokuapp.com/order')
+            .then(response => {
+                console.log("checking")
+                this.setState({
+                    orders: response.data,
+                    ready: true
+                })
+                console.log(this.state.orders)
+
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+
+        }
+    }
+
     displayOrders() {
         let ordersArr = this.state.orders
         ordersArr = ordersArr.map((val, idx) => {
@@ -48,7 +77,6 @@ class OrderGridCard extends Component {
                 newOrder
             )
         })
-        console.log(ordersArr)
         return ordersArr
     }
 
