@@ -62,6 +62,9 @@ class App extends Component {
       localStorage.token = response.data.token
       this.setState({ isLoggedIn: true })
     })
+    .then(() => {
+      return <div><h1>Success! You're now signed up and logged in</h1></div>
+    })
     .catch(err => console.log(err))
   }
 
@@ -75,7 +78,42 @@ class App extends Component {
   render() {
 
     if (this.state.isLoggedIn !== true){
-      return 
+      return (
+        <div className="App">
+        <header className="nav">
+          <h1>Welcome to Narwhal Bakery</h1>
+          <div className="header-buttons">
+            <Link to="/signup"><Button type="create" label="Sign Up" /></Link>
+            <Link to="/login"><Button type="create" label="Log In" /></Link>
+          </div>
+        </header>
+        <div className="container">
+          <Route path='/signup'
+            render={(props) => {
+              return (
+                <SignUpForm url={url} isLoggedIn={this.state.isLoggedIn} handleInput={this.handleInput} handleSignUp={this.handleSignUp} />
+              )
+            }}
+          />
+          <Route path='/logout'
+            render={(props) => {
+              return (
+                <LogOut url={url} isLoggedIn={this.state.isLoggedIn} handleLogOut={this.handleLogOut} />
+              )
+            }}
+          />
+          <Route path='/login'
+            render={(props) => {
+              return (
+                <LogInForm url={url} isLoggedIn={this.state.isLoggedIn} handleInput={this.handleInput} handleLogIn={this.handleLogIn} />
+              )
+            }}
+          />
+        </div>
+        <div>
+        </div>
+      </div>
+      )
     }
     else {
     return (
@@ -85,14 +123,12 @@ class App extends Component {
           <div className="header-buttons">
             <Link to="/catalog/"> <Button type="create" label="My Catalog" /></Link>
             <Link to="/orders"> <Button type="create" label="My Orders" /></Link>
-            <Link to="/signup"><Button type="create" label="Sign Up" /></Link>
-            <Link to="/login"><Button type="create" label="Log In" /></Link>
             <Link to="/logout"><Button type="create" label="Log Out" /></Link>
           </div>
         </header>
         <div className="container">
           <Route path="/"
-            render={() => { return <Redirect to="/login" /> }}
+            render={() => { return <Redirect to="/catalog" /> }}
             exact />
           <Route
             path="/orders"
