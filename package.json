@@ -1,5 +1,5 @@
 {
-  "homepage": "http://AtessaLeila.github.io/project8-mern-frontend",
+  "homepage": "http://AtessaLeila.github.io/project8-mern-frontend/app",
   "name": "project8-mern-frontend",
   "version": "0.1.0",
   "private": true,
@@ -47,6 +47,7 @@
   "main": "index.js",
   "devDependencies": {
     "@storybook/react": "^5.3.19",
+    "@storybook/storybook-deployer": "^2.8.6",
     "gh-pages": "^3.1.0"
   },
   "author": "",

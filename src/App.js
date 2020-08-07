@@ -7,6 +7,7 @@ import Button from "./components/Button/Button";
 import SignUpForm from './components/SignUpForm/SignUpForm'
 import LogInForm from './components/LogInForm/LogInForm'
 import LogOut from './components/LogOut/LogOut'
+import axios from 'axios';
 
 let url = "https://group-project-mern-backend.herokuapp.com"
 
@@ -40,7 +41,12 @@ class App extends Component {
   }
 
   handleLogOut() {
-
+    this.setState({
+      email: '',
+      password: '',
+      isLoggedIn: false
+    })
+    localStorage.clear()
   }
 
   handleInput(e) {
@@ -50,11 +56,29 @@ class App extends Component {
   }
 
   handleSignUp(e) {
-
+    e.preventDefault()
+    axios.post('https://group-project-mern-backend.herokuapp.com/users/signup', {
+      email: this.state.email,
+      password: this.state.password
+    })
+      .then(response => {
+        localStorage.token = response.data.token
+        this.setState({ isLoggedIn: true })
+      })
+      .catch(err => console.log(err))
   }
 
   handleLogIn(e) {
-
+    e.preventDefault()
+    axios.post('https://group-project-mern-backend.herokuapp.com/users/login', {
+      email: this.state.email,
+      password: this.state.password
+    })
+      .then(response => {
+        localStorage.token = response.data.token
+        this.setState({ isLoggedIn: true })
+      })
+      .catch(err => console.log(err))
   }
 
 
