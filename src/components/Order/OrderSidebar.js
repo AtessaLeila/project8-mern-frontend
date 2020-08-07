@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Dropdown from '../Dropdown/Dropdown'
 import Button from '../Button/Button'
 import Searchfield from '../Searchfield/Searchfield'
+import axios from 'axios';
 
 class OrderSidebar extends Component {
     constructor(props){
@@ -109,7 +110,14 @@ class OrderSidebar extends Component {
     }
 
     clearFilters = () => {
-        this.props.setList(null)
+        axios.get('https://group-project-mern-backend.herokuapp.com/order')
+                .then(response => {
+                    this.props.setList(response)
+                })
+                .catch(function (error) {
+                    console.log(error);
+                })
+        
     }
 
     render(){
