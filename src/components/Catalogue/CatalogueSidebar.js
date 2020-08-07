@@ -22,7 +22,6 @@ class CatalogueSidebar extends Component {
                     items: response.data,
                     ready: true
                 })
-                console.log(this.state.items)
 
             })
             .catch(function (error) {
@@ -39,7 +38,6 @@ class CatalogueSidebar extends Component {
                 newItem
             )
         })
-        console.log(itemsArr)
         return itemsArr
     }
 

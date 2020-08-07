@@ -112,17 +112,20 @@ class OrderSidebar extends Component {
                     ,customer: null
                     ,dueDate: null
                  })
+                 
              })
     }
 
     clearFilters = () => {
-        axios.get('https://group-project-mern-backend.herokuapp.com/order')
+       /*  axios.get('https://group-project-mern-backend.herokuapp.com/order')
                 .then(response => {
                     this.props.setList(response.data)
                 })
                 .catch(function (error) {
                     console.log(error);
-                })
+                }) */
+
+                window.location = "/orders"
         
     }
 
@@ -177,7 +180,7 @@ class OrderSidebar extends Component {
                     <div className ="order-sidebar-buttons-container">
                         <input type="submit" style={subBut} />
                         <div onClick={this.clearFilters}>
-                        <Button type="delete" label="Cancel" />
+                        <Button type="delete" label="Clear" />
                         </div>
                     </div>
                 </form>
