@@ -16,40 +16,45 @@ let url = "https://group-project-mern-backend.herokuapp.com"
 
 class App extends Component {
   constructor() {
-    super()
+    super();
 
     this.state = {
-      email: '',
-      password: '',
+      email: "",
+      password: "",
       isLoggedIn: false,
-    }
+    };
 
-    this.handleLogOut = this.handleLogOut.bind(this)
-    this.handleInput = this.handleInput.bind(this)
-    this.handleLogIn = this.handleLogIn.bind(this)
-    this.handleSignUp = this.handleSignUp.bind(this)
+    this.handleLogOut = this.handleLogOut.bind(this);
+    this.handleInput = this.handleInput.bind(this);
+    this.handleLogIn = this.handleLogIn.bind(this);
+    this.handleSignUp = this.handleSignUp.bind(this);
   }
 
   componentDidMount() {
     if (localStorage.token) {
       this.setState({
-        isLoggedIn: true
-      })
+        isLoggedIn: true,
+      });
     } else {
       this.setState({
-        isLoggedIn: false
-      })
+        isLoggedIn: false,
+      });
     }
   }
 
-  handleLogOut() {
-
+  handleLogOut(e) {
+    this.setState({
+      email: "",
+      password: "",
+      isLoggedIn: false,
+    });
+    localStorage.clear();
   }
 
   handleInput(e) {
     this.setState({
-      [e.target.name]: e.target.value
-    })
+      [e.target.name]: e.target.value,
+    });
   }
 
   handleSignUp(e) {
@@ -69,9 +74,16 @@ class App extends Component {
   }
 
   handleLogIn(e) {
-
- 
-
+    e.preventDefault()
+    axios.post(`${url}/users/login`, {
+      email: this.state.email,
+      password: this.state.password
+    })
+    .then(response => {
+      localStorage.token = response.data.token
+      this.setState({isLoggedIn: true})
+    })
+    .catch(err => console.log(err))
   }
 
  
@@ -145,30 +157,47 @@ class App extends Component {
               return <Catalogue url={url} />;
             }}
           />
-          <Route path='/signup'
-            render={(props) => {
+          <Route
+            path="/signup"
+            render={props => {
               return (
-                <SignUpForm url={url} isLoggedIn={this.state.isLoggedIn} handleInput={this.handleInput} handleSignUp={this.handleSignUp} />
-              )
+                <SignUpForm
+                  url={url}
+                  isLoggedIn={this.state.isLoggedIn}
+                  handleInput={this.handleInput}
+                  handleSignUp={this.handleSignUp}
+                  handleLogOut={this.handleLogOut}
+                />
+              );
             }}
           />
-          <Route path='/logout'
-            render={(props) => {
+          <Route
+            path="/logout"
+            render={props => {
               return (
-                <LogOut url={url} isLoggedIn={this.state.isLoggedIn} handleLogOut={this.handleLogOut} />
-              )
+                <LogOut
+                  url={url}
+                  isLoggedIn={this.state.isLoggedIn}
+                  handleLogOut={this.handleLogOut}
+                />
+              );
             }}
           />
-          <Route path='/login'
-            render={(props) => {
+          <Route
+            path="/login"
+            render={props => {
               return (
-                <LogInForm url={url} isLoggedIn={this.state.isLoggedIn} handleInput={this.handleInput} handleLogIn={this.handleLogIn} />
-              )
+                <LogInForm
+                  url={url}
+                  isLoggedIn={this.state.isLoggedIn}
+                  handleInput={this.handleInput}
+                  handleLogIn={this.handleLogIn}
+                />
+              );
             }}
           />
         </div>
-        <div>
-        </div>
+        <div></div>
       </div>
     );
           }

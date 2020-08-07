@@ -17,7 +17,7 @@ class OrderDetail extends Component {
       status: "",
       items: [],
       statusColor: "",
-      ready: false
+      ready: false,
     };
     this.id = "5f2c4dc6dd12ce0004e869b4";
   }
@@ -38,7 +38,7 @@ class OrderDetail extends Component {
           total: res.total,
           status: res.status,
           items: res.orderInfo,
-          ready: true
+          ready: true,
         });
         if (this.state.status === "Ready") {
           this.setState({ statusColor: "#ECE2BE" });
@@ -53,7 +53,7 @@ class OrderDetail extends Component {
       });
   }
 
-  displayItems() {
+  displayItems = () => {
     let orderItems = this.state.items.map((value, index) => {
       let singleItem = (
         <div className="order-box" key={index}>
@@ -71,7 +71,7 @@ class OrderDetail extends Component {
       return singleItem;
     });
     return orderItems;
-  }
+  };
 
   updateStatus = () => {
     console.log(this.state.status);
@@ -139,60 +139,62 @@ class OrderDetail extends Component {
   };
 
   render() {
-    if (this.state.ready === true){
-    return (
-      <div className="order-detail">
-        <div className="order-detail-status">
-          <h2>
-            Status:{" "}
-            <span style={{ backgroundColor: `${this.state.statusColor}` }}>
-              {this.state.status}
-            </span>
-          </h2>
-        </div>
-        <div className="order-detail-info">
-          <p>
-            <strong>Order Number:</strong> {this.state.orderNumber}
-          </p>
-          <p>
-            <strong>Name:</strong> {this.state.customerName}
-          </p>
-          <p>
-            <strong>Due Date:</strong> {this.state.dueDate}
-          </p>
-          <p>
-            <strong> Address:</strong> {this.state.customerAddress}
-          </p>
-          <p>
-            <strong>Phone Number:</strong> {this.state.customerPhone}
-          </p>
-        </div>
-        <div className="items-ordered-box">
-          <div>
-            <h2>Items Ordered</h2>
+    if (this.state.ready === true) {
+      return (
+        <div className="order-detail">
+          <div className="order-detail-status">
+            <h2>
+              Status:{" "}
+              <span style={{ backgroundColor: `${this.state.statusColor}` }}>
+                {this.state.status}
+              </span>
+            </h2>
           </div>
-          <div className="order-box-header">
-            <h4>Name</h4>
-            <h4>Quantity</h4>
-            <h4>Price</h4>
+          <div className="order-detail-info">
+            <p>
+              <strong>Order Number:</strong> {this.state.orderNumber}
+            </p>
+            <p>
+              <strong>Name:</strong> {this.state.customerName}
+            </p>
+            <p>
+              <strong>Due Date:</strong> {this.state.dueDate}
+            </p>
+            <p>
+              <strong> Address:</strong> {this.state.customerAddress}
+            </p>
+            <p>
+              <strong>Phone Number:</strong> {this.state.customerPhone}
+            </p>
           </div>
-          <div className="displayed-items">{this.displayItems()}</div>
+          <div className="items-ordered-box">
+            <div>
+              <h2>Items Ordered</h2>
+            </div>
+            <div className="order-box-header">
+              <h4>Name</h4>
+              <h4>Quantity</h4>
+              <h4>Price</h4>
+            </div>
+            <div className="displayed-items">{this.displayItems()}</div>
+          </div>
+          <div className="status-button">{this.setStatusButton()}</div>
+          <div className="order-detail-cost">
+            <p>
+              <strong>Sub-Total:</strong> ${this.state.subTotal}
+            </p>
+            <p>
+              <strong>Tax:</strong> ${this.state.tax}
+            </p>
+            <p>
+              <strong>Total:</strong> ${this.state.total}
+            </p>
+          </div>
         </div>
-        <div className="status-button">{this.setStatusButton()}</div>
-        <div className="order-detail-cost">
-          <p>
-            <strong>Sub-Total:</strong> ${this.state.subTotal}
-          </p>
-          <p>
-            <strong>Tax:</strong> ${this.state.tax}
-          </p>
-          <p>
-            <strong>Total:</strong> ${this.state.total}
-          </p>
-        </div>
-      </div>
-    )}
-    else {return null}
+      );
+    } else {
+      return null;
+    }
   }
 }
 
