@@ -4,7 +4,6 @@ import "./App.css";
 import Catalogue from "./components/Catalogue/Catalogue";
 import Order from "./components/Order/Order";
 import Button from "./components/Button/Button";
-import CatalogueSidebar from "./components/Catalogue/CatalogueSidebar";
 
 let url = "https://group-project-mern-backend.herokuapp.com"
 
@@ -20,7 +19,6 @@ class App extends Component {
             <Link to="/orders"> <Button type="create" label="My Orders" /></Link>
           </div>
         </header>
-        <body>
           <div className="container">
             <Route path="/" 
               render={() =>{return <Redirect to="/catalog"/>}} 
@@ -40,7 +38,6 @@ class App extends Component {
             />
 
           </div>
-        </body>
       </div>
     );
   }

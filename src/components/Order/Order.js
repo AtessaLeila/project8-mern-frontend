@@ -24,7 +24,6 @@ class Order extends Component{
     }
 
     setList = list => {
-        console.log(list)
         this.setState({
             orderList: list
         })

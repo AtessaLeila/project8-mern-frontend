@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import './Searchfield.css';
-import { render } from '@testing-library/react';
-import { ThemeConsumer } from 'react-bootstrap/esm/ThemeProvider';
-import { Link, Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 class Searchfield extends Component {
     constructor(props){
@@ -26,7 +24,6 @@ class Searchfield extends Component {
 
     onSubmit = (e) => {
         e.preventDefault()
-        console.log("running")
         fetch(`${this.props.url}/item/name/${this.state.value}`)
             .then(res => res.json())
             .then(res =>{

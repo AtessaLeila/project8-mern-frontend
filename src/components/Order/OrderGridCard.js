@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import CardOrder from '../CardOrder/CardOrder';
-import {Link} from 'react-router-dom'
-
 
 
 class OrderGridCard extends Component {
@@ -22,7 +20,6 @@ class OrderGridCard extends Component {
                         orders: response.data,
                         ready: true
                     })
-                    console.log(this.state.orders)
 
                 })
                 .catch(function (error) {
@@ -31,9 +28,7 @@ class OrderGridCard extends Component {
     }
 
     componentDidUpdate(props) {
-        console.log("reset")
         if (props.orderList !== this.props.orderList){
-                console.log(this.props.orderList)
                 this.setState({
                     orders: this.props.orderList,
                     ready: true

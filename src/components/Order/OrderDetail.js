@@ -23,7 +23,6 @@ class OrderDetail extends Component {
   }
 
   componentDidMount() {
-    console.log("running")
     fetch(`${this.props.url}/order/id/${this.props.id}`)
       .then(res => res.json())
       .then(res => {
@@ -57,7 +56,7 @@ class OrderDetail extends Component {
   displayItems() {
     let orderItems = this.state.items.map((value, index) => {
       let singleItem = (
-        <div className="order-box">
+        <div className="order-box" key={index}>
           <div className="order-box-item">
             <p className="order-val">{value.itemName}</p>
           </div>
