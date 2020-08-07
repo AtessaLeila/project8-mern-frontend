@@ -3,6 +3,9 @@
     display: inline-block;
     height: 80vh;
 }
+.sidebar a {
+  color: #3c3c3c;
+}
 
  div.scroll { 
     margin:4px, 4px; 
