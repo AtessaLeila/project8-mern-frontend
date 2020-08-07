@@ -16,7 +16,10 @@ class OrderGridCard extends Component {
 
     componentDidMount() {
         if (this.props.orderList){
-            this.set
+            this.setState({
+                orders: this.props.orderList,
+                ready: true
+            })
         }
         else {
             axios.get('https://group-project-mern-backend.herokuapp.com/order')

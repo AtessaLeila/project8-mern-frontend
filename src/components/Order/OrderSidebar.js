@@ -103,6 +103,9 @@ class OrderSidebar extends Component {
                      return newArr.filter(obj => obj !== undefined)
                  } else {return arr}
              })
+             .then(arr =>{
+                 this.props.setList(arr)
+             })
     }
 
     render(){
