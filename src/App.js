@@ -10,7 +10,6 @@ import LogOut from './components/LogOut/LogOut'
 import axios from 'axios'
 import { render } from "@testing-library/react";
 
-
 let url = "https://group-project-mern-backend.herokuapp.com"
 
 
@@ -54,7 +53,6 @@ class App extends Component {
       email: this.state.email,
       password: this.state.password
     })
-
       .then(response => {
         localStorage.token = response.data.token
         this.setState({ isLoggedIn: true })
@@ -82,11 +80,6 @@ class App extends Component {
       isLoggedIn: false,
     });
     localStorage.clear();
-      .then(response => {
-        localStorage.token = response.data.token
-        this.setState({ isLoggedIn: true })
-      })
-      .catch(err => console.log(err))
   }
 
 
@@ -124,7 +117,6 @@ class App extends Component {
             }}
           />
         </div>
-        <div>
         </div>
       )
     }
@@ -147,7 +139,6 @@ class App extends Component {
               exact /> 
               <Route path="/login"
               render={() => { return <Redirect to="/catalog" /> }}
-
               exact />
             <Route
               path="/orders"
@@ -205,7 +196,6 @@ class App extends Component {
           <div></div>
         </div>
       );
-
     }
   }
 }
