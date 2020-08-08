@@ -8,6 +8,7 @@ import SignUpForm from './components/SignUpForm/SignUpForm'
 import LogInForm from './components/LogInForm/LogInForm'
 import LogOut from './components/LogOut/LogOut'
 import axios from 'axios'
+import { render } from "@testing-library/react";
 
 let url = "https://group-project-mern-backend.herokuapp.com"
 
@@ -96,21 +97,21 @@ class App extends Component {
             render={() => { return <Redirect to="/login" /> }}
             exact />
           <Route path='/signup'
-            render={(props) => {
+            render={() => {
               return (
                 <SignUpForm url={url} isLoggedIn={this.state.isLoggedIn} handleInput={this.handleInput} handleSignUp={this.handleSignUp} />
               )
             }}
           />
           <Route path='/logout'
-            render={(props) => {
+            render={() => {
               return (
                 <LogOut url={url} isLoggedIn={this.state.isLoggedIn} handleLogOut={this.handleLogOut} />
               )
             }}
           />
           <Route path='/login'
-            render={(props) => {
+            render={() => {
               return (
                 <LogInForm url={url} isLoggedIn={this.state.isLoggedIn} handleInput={this.handleInput} handleLogIn={this.handleLogIn} />
               )
@@ -123,79 +124,82 @@ class App extends Component {
       )
     }
     else {
-    return (
-      <div className="App">
-        <header className="nav">
-          <h1>Welcome to Narwhal Bakery</h1>
-          <div className="header-buttons">
-            <div className="nav-buttons">
-            <Link to="/catalog/"> <Button type="create" label="My Catalog" /></Link>
-            <Link to="/orders"> <Button type="create" label="My Orders" /></Link>
+      return (
+        <div className="App">
+          <header className="nav">
+            <h1>Welcome to Narwhal Bakery</h1>
+            <div className="header-buttons">
+              <div className="nav-buttons">
+              <Link to="/catalog/"> <Button type="create" label="My Catalog" /></Link>
+              <Link to="/orders"> <Button type="create" label="My Orders" /></Link>
+              </div>
+              <Link to="/logout" onClick={this.handleLogOut}><Button type="create" label="Log Out" /></Link>
             </div>
-            <Link to="/logout" onClick={this.handleLogOut}><Button type="create" label="Log Out" /></Link>
+          </header>
+          <div className="container">
+            <Route path="/"
+              render={() => { return <Redirect to="/catalog" /> }}
+              exact /> 
+              <Route path="/login"
+              render={() => { return <Redirect to="/catalog" /> }}
+              exact />
+            <Route
+              path="/orders"
+              render={() => {
+                return <Order url={url} />;
+              }}
+            />
+
+            <Route
+              path="/catalog/"
+              render={() => {
+                return <Catalogue url={url} />;
+              }}
+            />
+            <Route
+              path="/signup"
+              render={props => {
+                return (
+                  <SignUpForm
+                    url={url}
+                    isLoggedIn={this.state.isLoggedIn}
+                    handleInput={this.handleInput}
+                    handleSignUp={this.handleSignUp}
+                    handleLogOut={this.handleLogOut}
+                  />
+                );
+              }}
+            />
+            <Route
+              path="/logout"
+
+              render={props => {
+                return (
+                  <LogOut
+                    url={url}
+                    isLoggedIn={this.state.isLoggedIn}
+                    handleLogOut={this.handleLogOut}
+                  />
+                )
+              }}
+            />
+            <Route
+              path="/login"
+              render={props => {
+                return (
+                  <LogInForm
+                    url={url}
+                    isLoggedIn={this.state.isLoggedIn}
+                    handleInput={this.handleInput}
+                    handleLogIn={this.handleLogIn}
+                  />
+                );
+              }}
+            />
           </div>
-        </header>
-        <div className="container">
-          <Route path="/"
-            render={() => { return <Redirect to="/catalog" /> }}
-            exact />
-          <Route
-            path="/orders"
-            render={() => {
-              return <Order url={url} />;
-            }}
-          />
-
-          <Route
-            path="/catalog/"
-            render={() => {
-              return <Catalogue url={url} />;
-            }}
-          />
-          <Route
-            path="/signup"
-            render={props => {
-              return (
-                <SignUpForm
-                  url={url}
-                  isLoggedIn={this.state.isLoggedIn}
-                  handleInput={this.handleInput}
-                  handleSignUp={this.handleSignUp}
-                  handleLogOut={this.handleLogOut}
-                />
-              );
-            }}
-          />
-          <Route
-            path="/logout"
-
-            render={props => {
-              return (
-                <LogOut
-                  url={url}
-                  isLoggedIn={this.state.isLoggedIn}
-                  handleLogOut={this.handleLogOut}
-                />
-              )
-            }}
-          />
-          <Route
-            path="/login"
-            render={props => {
-              return (
-                <LogInForm
-                  url={url}
-                  isLoggedIn={this.state.isLoggedIn}
-                  handleInput={this.handleInput}
-                  handleLogIn={this.handleLogIn}
-                />
-              );
-            }}
-          />
+          <div></div>
         </div>
-        <div></div>
-      </div>
-    );
+      );
           }
   }
 }
