@@ -47,7 +47,7 @@ class SignUpForm extends Component {
       </div>
     )
     }
-    else {return <div><h1>Success! You're now signed up and logged in</h1></div>}
+    else { return <div><h1>Success! You're now signed up and logged in</h1></div> }
 
   }
 }

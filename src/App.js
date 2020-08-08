@@ -53,12 +53,11 @@ class App extends Component {
       email: this.state.email,
       password: this.state.password
     })
-    .then(response => {
-      localStorage.token = response.data.token
-      this.setState({ isLoggedIn: true })
-    })
-
-    .catch(err => console.log(err))
+      .then(response => {
+        localStorage.token = response.data.token
+        this.setState({ isLoggedIn: true })
+      })
+      .catch(err => console.log(err))
   }
 
   handleLogIn(e) {
@@ -83,10 +82,10 @@ class App extends Component {
     localStorage.clear();
   }
 
- 
+
   render() {
 
-    if (this.state.isLoggedIn !== true){
+    if (this.state.isLoggedIn !== true) {
       return (
         <div className="App">
         <header className="nav">
@@ -118,9 +117,7 @@ class App extends Component {
             }}
           />
         </div>
-        <div>
         </div>
-      </div>
       )
     }
     else {
@@ -172,7 +169,6 @@ class App extends Component {
             />
             <Route
               path="/logout"
-
               render={props => {
                 return (
                   <LogOut
@@ -200,7 +196,7 @@ class App extends Component {
           <div></div>
         </div>
       );
-          }
+    }
   }
 }
 
