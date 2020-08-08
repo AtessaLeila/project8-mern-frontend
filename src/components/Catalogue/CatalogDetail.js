@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Button from '../Button/Button'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 
 export class CatalogDetail extends Component {
     constructor(props) {
@@ -66,7 +66,7 @@ export class CatalogDetail extends Component {
         } 
         fetch(`${this.props.url}/item/name/${this.state.name}`, options)
         .then(res => res.json())
-        .then(res =>{
+        .then(() =>{
             this.setState({
                 ready: false
                 ,deleted: true
@@ -104,11 +104,7 @@ export class CatalogDetail extends Component {
         </div>
         )
         } else if (this.state.deleted === true){
-            return (<div>
-                <Link to="/catalog">
-                    <Button type="edit" label="Back to Catalog"  />
-                </Link>
-            </div>)
+            return <Redirect to="/catalog" />
         } else {return null}
     }
   }
