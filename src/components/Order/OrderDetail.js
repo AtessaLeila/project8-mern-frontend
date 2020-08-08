@@ -19,7 +19,7 @@ class OrderDetail extends Component {
       statusColor: "",
       ready: false,
     };
-    this.id = "5f2c4dc6dd12ce0004e869b4";
+    this.id = this.props.id;
   }
 
   componentDidMount() {

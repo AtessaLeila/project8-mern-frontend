@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 
 import "./LogOut.css";
+import { Link } from "react-router-dom";
+import Button from "../Button/Button";
 
 class LogOut extends Component {
   render() {
@@ -8,14 +10,10 @@ class LogOut extends Component {
       <div>
         <div className="logout-page">
           <h2> Thanks for Ordering!</h2>
-          <form className="logout-form">
-            <input
-              className="logout-input"
-              value="Log Out"
-              type="submit"
-              onClick={this.props.handleLogOut}
-            />
-          </form>
+          <h2> See you again soon!</h2>
+          <div className="logout-button">
+            <Link to="/login"><Button type="create" label="Log Back In" /></Link>
+          </div>        
         </div>
       </div>
     );
