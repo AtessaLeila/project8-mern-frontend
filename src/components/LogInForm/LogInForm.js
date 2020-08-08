@@ -3,21 +3,21 @@ import React, { Component } from 'react'
 import './LogInForm.css'
 
 class LogInForm extends Component {
-  render () {
+  render() {
     return (
-      <div>
-        <h2>Log In</h2>
+      <div className="login-form">
 
         <form>
-          <div>
-            <label htmlFor='email'>Email</label>
-            <input type='text' name='email' onChange={this.props.handleInput} />
+          <h2 className="text-center">Log In</h2>
+          <div className="form-group">
+            <input type='text' name='email' placeholder='Email' className="inputfield" onChange={this.props.handleInput} />
           </div>
-          <div>
-            <label htmlFor='password'>Password</label>
-            <input type='text' name='password' onChange={this.props.handleInput} />
+          <div className="form-group">
+            <input type='text' name='password' placeholder='Password' className="inputfield" onChange={this.props.handleInput} />
           </div>
-          <input value='Submit' type='submit' onClick={this.props.handleLogIn} />
+          <div className="form-group">
+            <input value='Submit' type='submit' className="login-signup-btn" onClick={this.props.handleLogIn} />
+          </div>
         </form>
       </div>
     )
