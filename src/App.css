@@ -4,7 +4,7 @@
 
 .App {
   width: 100vw;
-  height: 100vh;
+  height: 99vh;
   background-color: #F1FAFD;
   color: #3c3c3c;
 }
@@ -29,11 +29,6 @@
   justify-content: space-between;
 }
 
-/* body {
-  height: 90vh;
-  margin: 0 auto;
-  padding: 0;
-} */
 .container {
   height: 90vh;
   margin: 0 auto;
@@ -162,17 +157,18 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 90%;
-  height: 92%;
+  width: 75%;
+  height: 95%;
 }
 
 .item-form {
   background-color: #ffffff;
   width: 98%;
   height: 95%;
-  /* border: 4px outset #9FC3CC; */
+  margin: 0;
   box-shadow: 0px 0px 5px 1px #9FC3CC;
   overflow: scroll;
+  color: #3c3c3c;
 
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -206,10 +202,14 @@
   margin-top: 2%;
   width: 93%;
   justify-self: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .item-form-input {
   width: 80%;
+  border: 3px solid #F1F3F4;
+  font-size: 15px;
 }
 
 .item-form-name {
@@ -240,22 +240,23 @@
   display: flex;
   justify-content: flex-start;
   width: 85%;
-  height: 10%
+  height: 15%
 }
 
 .item-form-unit {
-  width: 15%;
+  width: 25%;
   margin: 0 12% 0 0;
+  display: flex;
 }
 
 .item-form-row-two-inventory {
   width: 90%;
-  height: 8%;
+  height: 18%;
   margin-top: 5%;
 }
 
 .item-form-inventory {
-  width: 14.5%;
+  width: 19%;
   height: 100%;
   margin: 0 12% 0 0;
 }

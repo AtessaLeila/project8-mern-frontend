@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Link} from 'react-router-dom'
+import {Link, Redirect} from 'react-router-dom'
 import Button from "../Button/Button"
 
 export class ItemForm extends Component {
@@ -90,9 +90,8 @@ export class ItemForm extends Component {
 
     render() {
         if (this.state.success){
-         return (
-             <div><h2>Success!</h2></div>
-         )       
+            alert("The item has been created")
+         return <Redirect to="/catalog" />
         }
         else if (this.state.ready && this.props.id){
         return (
@@ -108,12 +107,19 @@ export class ItemForm extends Component {
                     <textarea className="item-form-detail item-form-input" name="description" value={this.state.description} onChange={this.onChange} />
                 </div>
                 <div className="item-form-row-two">
+                
                     <div className="item-form-row-two-unit-price">
-                        <input className="item-form-unit" type="number" name="unit" value={this.state.unit} onChange={this.onChange} />
-                        <input className="item-form-unit" type="number" name="unitPrice" value={this.state.unitPrice} onChange={this.onChange} />
+                    <div className="item-form-unit">
+                        <input className="item-form-input" type="number" name="unit" value={this.state.unit} onChange={this.onChange} />
+                        <h2>ct.</h2>
+                    </div>
+                    <div className="item-form-unit">
+                        <h2>$</h2>
+                        <input className="item-form-input" type="number" name="unitPrice" value={this.state.unitPrice} onChange={this.onChange} />
+                    </div>
                     </div>
                     <div className="item-form-row-two-inventory">
-                    <input className="item-form-inventory" type="number" name="inventoryCount" value={this.state.inventoryCount} onChange={this.onChange} />
+                    <input className="item-form-inventory item-form-input" type="number" name="inventoryCount" value={this.state.inventoryCount} onChange={this.onChange} />
                     </div>
                 </div>
                 <div className="item-form-buttons">
@@ -129,18 +135,24 @@ export class ItemForm extends Component {
                     <input className="item-form-add-image" type="text" name="image" placeholder="Image Url" onChange={this.onChange} />
                 </div>
                 <div className="item-form-row-one">
-                    <h2>Enter the details for the new item.</h2>
+                    <h2>Enter the details for the new item</h2>
                     <input className="item-form-name item-form-input" type="text" name="name" placeholder="Item Name" onChange={this.onChange} />
                     <input className="item-form-category item-form-input" type="text" name="category" placeholder="Item Category" onChange={this.onChange} />
                     <textarea className="item-form-detail item-form-input" name="description" placeholder="Item Description" onChange={this.onChange} />
                 </div>
                 <div className="item-form-row-two">
                     <div className="item-form-row-two-unit-price">
-                        <input className="item-form-unit" type="number" name="unit" placeholder="Unit Size" onChange={this.onChange} />
-                        <input className="item-form-unit" type="number" name="unitPrice" placeholder="Unit Price" onChange={this.onChange} />
+                        <div className="item-form-unit">
+                        <input className="item-form-input" type="number" name="unit" placeholder="Unit Size" onChange={this.onChange} />
+                        <h2>ct.</h2>            
+                        </div>
+                        <div className="item-form-unit">
+                        <h2>$</h2>            
+                        <input className="item-form-input" type="number" name="unitPrice" placeholder="Unit Price" onChange={this.onChange} />
+                        </div>
                     </div>
                     <div className="item-form-row-two-inventory">
-                    <input className="item-form-inventory" type="number" name="inventoryCount" placeholder="Inventory Ct." onChange={this.onChange} />
+                    <input className="item-form-inventory item-form-input" type="number" name="inventoryCount" placeholder="Inventory Ct." onChange={this.onChange} />
                     </div>
                 </div>
                 <div className="item-form-buttons">
