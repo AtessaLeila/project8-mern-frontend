@@ -5,7 +5,6 @@ import './SignUpForm.css'
 
 class SignUpForm extends Component {
 
-
   
 
   render () {
