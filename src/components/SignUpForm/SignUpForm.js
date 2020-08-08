@@ -43,6 +43,7 @@ class SignUpForm extends Component {
           </div>
           <input value='Sign Up' type='submit' style={subBut} onClick={this.props.handleSignUp} />
         </form>
+        <Link to="/login" ><p style={{textDecoration: "none", color: "#3c3c3c"}}>Log In</p></Link>
       </div>
     )
     }
